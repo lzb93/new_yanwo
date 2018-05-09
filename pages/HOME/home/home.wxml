@@ -1,0 +1,63 @@
+<view class=''>
+  <view class='search_container'>
+    <view class='search flex_between'>
+      <view class='search_left flex_row'>
+        <view class='search_icon'>
+          <image src='../../../images/icon_search.png'></image>
+        </view>
+        <view class='search_input'>
+          <input placeholder='使用关键词快速查找商品' value="{{keyword}}" type="text"placeholder-class="psection" confirm-type="search"
+          maxlength="20" bindblur="onblur" bindinput="oninput" bindconfirm="search"></input>
+        </view>
+      </view>
+      <view class="icon_empt" wx:if="{{isEmpt}}" bindtap="empt">
+        <image src="../../../images/icon_empt.png"></image>
+      </view>
+      <view class='search_btn main_color' bindtap="search">搜索</view>
+    </view>
+  </view>
+  
+
+  <swiper class='swiper' indicator-dots="{{true}}" autoplay="{{true}}" interval="{{4000}}" circular="{{true}}">
+    <block>
+      <swiper-item wx:for="{{banners}}" wx:key>
+        <navigator url='/pages/HOME/detail/detail?id={{item.goods_id}}'>
+          <image src="../../../images/team-btn.png"></image>
+        </navigator>
+      </swiper-item>
+    </block>
+  </swiper>
+
+ 
+
+  <!-- 今日推荐 -->
+<view class='jinrituiji'>
+  <view class='nav-jrtj'>
+    <image src='../../../images/biaoti.png' mode="widthFix"></image>
+  </view>
+  <view class="hot_ul">
+      <view class="hot_li clearfix" wx:for="{{goodsList}}" wx:key wx:if='{{index < 2}}'>
+        <navigator class='clearfix'  url='/pages/HOME/detail/detail?id={{item.goods_id}}'>
+
+          <view class="img"><image src='{{host}}&c=Goods&a=goodsThumImages&width=185&height=185&goods_id={{item.goods_id}}' class="slide-image" /></view>
+          <view class="info">
+            <!-- <view class="">[买二送一]</view> -->
+            <view class="name tx_ov2">{{item.goods_name}}</view>
+            <view class="price">
+              <text>￥{{item.shop_price}}</text>
+              <text class="fukuan fr">{{item.sales_sum}}人购买</text>
+            </view>
+            
+          </view>
+          </navigator>
+      </view>
+
+
+      
+    </view>
+
+</view>
+
+
+
+</view>
