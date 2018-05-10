@@ -1,5 +1,5 @@
 module.exports = {
-  appName: '蚂蚁家云超市',
+  appName: '禧燕燕窝',
   appLogo: '../../../images/logo.png', //建议24*24, 本地图片或网络图片
   url: 'https://cc.meilashidai.cn',
   //转发按钮配置：https://mp.weixin.qq.com/debug/wxadoc/dev/api/share.html#onshareappmessageoptions

@@ -206,7 +206,7 @@ Page({
   },
   onShareAppMessage(res) {
     return {
-      title: '蚂蚁家云超市',
+      title: '禧燕燕窝',
       path: '/pages/HOME/home/home?userId=' + app.userInfo.user_id,
     }
   }

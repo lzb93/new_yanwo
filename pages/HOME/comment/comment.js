@@ -49,7 +49,8 @@ Page({
     const navs = this.data.navs;
     let arr = navs.map((item, key) => {
       return {
-        type: key + 1,
+        // type: key + 1,
+        type: item.type,
         name: item.name,
         sum: statistics[item.id]
       }

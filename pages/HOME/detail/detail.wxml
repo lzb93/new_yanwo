@@ -44,7 +44,7 @@
           <view class='comment_date color_gray'>{{item.add_time}}</view>
         </view>
 
-        <view class='comment_text'>{{item.content}}</view>
+        <view class='comment_text'>{{item.content}}</view>  
 
       </view>
     </view>
