@@ -14,21 +14,21 @@ Page({
         type: '1',
         name: '全部评价'
       },
-      {
-        id: 'high_sum',
-        type: '2',
-        name: '好评'
-      },
-      {
-        id: 'center_sum',
-        type: '3',
-        name: '中评'
-      },
-      {
-        id: 'low_sum',
-        type: '4',
-        name: '差评'
-      },
+      // {
+      //   id: 'high_sum',
+      //   type: '2',
+      //   name: '好评'
+      // },
+      // {
+      //   id: 'center_sum',
+      //   type: '3',
+      //   name: '中评'
+      // },
+      // {
+      //   id: 'low_sum',
+      //   type: '4',
+      //   name: '差评'
+      // },
       {
         id: 'img_sum',
         type: '5',

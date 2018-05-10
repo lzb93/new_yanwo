@@ -10,7 +10,7 @@ page {
   border-bottom: 1rpx solid #E5E5E5;
   background-color: #fff;
 }
-.nav_item {display: inline-block; font-size: 28rpx;}
+.nav_item {display: inline-block; font-size: 28rpx;width:50%;}
 .nav_item_s {padding: 10rpx 25rpx; text-align: center;}
 .nav_item_s.selected {color: #FFA00A;}
 .nav_item_s.selected > view {color: #FFA00A;}

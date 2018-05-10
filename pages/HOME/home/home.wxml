@@ -9,11 +9,12 @@
           <input placeholder='使用关键词快速查找商品' value="{{keyword}}" type="text"placeholder-class="psection" confirm-type="search"
           maxlength="20" bindblur="onblur" bindinput="oninput" bindconfirm="search"></input>
         </view>
+        <view class="icon_empt" wx:if="{{isEmpt}}" bindtap="empt">
+            <image src="../../../images/icon_empt.png"></image>
+        </view>
       </view>
-      <view class="icon_empt" wx:if="{{isEmpt}}" bindtap="empt">
-        <image src="../../../images/icon_empt.png"></image>
-      </view>
-      <view class='search_btn main_color' bindtap="search">搜索</view>
+      
+      <view class='search_btn' bindtap="search">搜索</view>
     </view>
   </view>
   

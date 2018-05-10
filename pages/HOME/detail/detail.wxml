@@ -18,10 +18,12 @@
             <view class='detail_m'>￥{{goodsInfo.shop_price}}</view>
             <view class='color_gray' wx:if="{{goodsInfo.market_price}}" style='text-decoration: line-through; font-size: 24rpx; margin-left: 15rpx;'>￥{{goodsInfo.market_price}}</view>
           </view>
-          <view class='detail_b'>销量{{goodsInfo.sales_sum}}笔</view>
+         
         </view>
         <view class='detail_c tx_ov2'>{{goodsInfo.goods_name}}</view>
-        <view class='detail_p right'>库存({{goodsInfo.store_count}}件)</view>
+         <view class='detail_p tl'>  </view>
+         <view class='detail_p tc'>销量{{goodsInfo.sales_sum}}笔</view>
+        <view class='detail_p tr'>库存({{goodsInfo.store_count}}件)</view>
       </view>
     </view>
   </view>

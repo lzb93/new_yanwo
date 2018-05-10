@@ -1,6 +1,49 @@
 <!--pages/USER/user/user.wxml-->
 <view>
-  <view class='user_header flex_row'>
+   <view class="userinfo_wrap">
+    <image class='ursebg' src="../../../images/beijing.png" mode='widthFix' />
+    
+    <view class="userinfo">
+      <view class="img">
+           <image src="{{userInfo.avatarUrl}}" />
+     
+
+      </view>
+      <view class="info">
+        <view class="name"> {{userInfo.nickName}}
+        <!-- <image src='../../../images/bianji.png' style='width:31rpx;height:31rpx;display: inline-block;margin-left:15rpx;'></image> -->
+        </view>
+       
+        <view class="name" wx:if="{{!userInfo}}" catchtap="login">登录</view>
+        <view class="sex">
+          <!-- <text>{{userInfo.gender == 1 ? '男' : (userInfo.gender == 2 ? '女': '')}}</text> -->
+          <view>
+            <!-- <image wx:if="{{userInfo.gender == 1}}" src="../../../images/sex_boy.png" />
+            <image wx:if="{{userInfo.gender == 2}}" src="../../../images/sex_girl.png" /> -->
+          </view>
+        </view>
+        <!-- <navigator class="balance" url="/pages/USER/balance/balance">
+          <text>{{userInfo.user_money}}</text>
+          <text>余额</text>
+        </navigator> -->
+        <view class="kefu_wrap">
+          <image src="../../../images/user_message.png"  mode='widthFix'></image>
+          <!-- <contact-button 
+          type="default-light" 
+          size="20"
+          session-from="weapp"> -->
+        <!-- </contact-button> -->
+          
+          <button open-type="contact"></button>
+        </view>
+      </view>
+      <!-- <view class="icon_jump">
+        <image src="../../../images/icon_jump_white.png" />
+      </view> -->
+    </view>
+  </view>
+  <!-- <view class='user_header flex_row'>
+    <image class='ursebg' src="../../../images/beijing.png" mode='widthFix' />
     <view class='user_header_avatar'>
       <image src='{{userInfo.avatarUrl}}' wx:if="{{userInfo.avatarUrl}}"></image>
       <view wx:if="{{!userInfo.avatarUrl}}"></view>
@@ -18,7 +61,7 @@
       <view style='margin-top: 5rpx; font-size: 22rpx; color: #fff;'>客服</view>
       <button open-type='contact'></button>
     </view>
-  </view>
+  </view> -->
 
   <view class='user_order'>
     <view class='user_order_wrap flex_between align_items'>
@@ -30,7 +73,7 @@
     </view>
     <view class='order_item_wrap flex_between'>
       <view class='order_item' wx:for="{{userNav}}" wx:key data-type="{{item.type}}" bindtap='openUserNav'>
-        <image src='{{item.src}}' mode='scaleToFill'></image>
+        <image src='{{item.src}}' mode='widthFix'></image>
         <view>{{item.name}}</view>
       </view>
     </view>

@@ -1,7 +1,7 @@
 @import './style/weui.wxss';
 
 page {
-  /* background-color: #EFEFF4; */
+   background: #f2f3f4;
 }
 .container {
   height: 100%;
