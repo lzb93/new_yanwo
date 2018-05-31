@@ -102,6 +102,7 @@
       <view class='pop_header_m'>{{selectedSpec.price}}</view>
       <view class='pop_header_k'>库存{{selectedSpec.store_count}}件</view>
       <view class='pop_header_s flex_row'>
+      
         <view wx:if="{{specs.length > 0}}">请选择</view>
         <view wx:for="{{specs}}" wx:for-item="spec" wx:key style='margin-left: 10rpx;'>{{spec.spec_name}}</view>
       </view>

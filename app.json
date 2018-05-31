@@ -26,6 +26,7 @@
     "pages/USER/refund/refund",
     "pages/USER/afterSale/afterSale",
     "pages/USER/pinglun/pinglun",
+    "pages/USER/authorize/authorize",
 
     "pages/USER/lower/lower",
     "pages/USER/lowerList/lowerList",

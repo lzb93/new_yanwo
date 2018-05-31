@@ -75,9 +75,12 @@ export function getUserInfo() {
     wx.getUserInfo({
       lang: 'zh_CN',
       success(res) {
+        
         resolve(res)
+
       },
       fail(e) {
+        // console.log("没授权")
         reject(e)
       }
     })

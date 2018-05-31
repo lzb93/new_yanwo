@@ -10,6 +10,7 @@ App({
     setting: setting
   },
   userInfo: {}, // 用户信息
+  // authorize:true,   //授权状态
   token: '', // 登录状态
   curEditAddress: {}, // 当前编辑的地址
   sendAddress: {}, //寄件人地址
