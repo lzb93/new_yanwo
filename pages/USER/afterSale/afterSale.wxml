@@ -1,4 +1,4 @@
-<!--pages/USER/order-cancel/order-cancel.wxml-->
+
 <view>
   <view class='order flex_between' wx:for="{{order.order_goods}}" wx:key>
     <image class='seller_img' src='{{host}}&c=Goods&a=goodsThumImages&width=140&height=140&goods_id={{item.goods_id}}'></image>
@@ -29,6 +29,6 @@
   </view>
 
   <view class='footer'>
-    <view class='footer_btn' bindtap='submit'>提交</view>
+    <view class='footer_btn main_bg' bindtap='submit'>提交</view> 
   </view>
 </view>

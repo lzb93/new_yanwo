@@ -121,19 +121,17 @@ page {
   height: 35rpx;
   margin-bottom: 5rpx;
 }
-.footer .footer_btn {
+.footer .footer_btn { 
   -webkit-box-flex:1;
   line-height: 90rpx;
-  background: linear-gradient(to right, #F3ABA7, #F24150);
+  background: #BCC4C3;
   font-size: 30rpx;
   color: #fff;
   text-align: center;
 }
-.footer .footer_btn.one_team {
-  background: #FFA00A;
-}
 
 .pop {
+  z-index: 1000;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -181,7 +179,7 @@ page {
 }
 .pop_header .pop_header_m {
   font-size: 34rpx;
-  color: #FFA00A;
+  color: #E93342;
 }
 .pop_header .pop_header_k, .pop_header .pop_header_s {
   font-size: 28rpx;
@@ -208,7 +206,7 @@ page {
   text-align: center;
 }
 .pop_center .color_item.selected {
-  background-color: #FFA00A;
+  background-color: #E93342;
   color: #fff;
 }
 /* .pop_center .color_item:nth-child(1) {
@@ -227,16 +225,13 @@ page {
 .pop_bottom .pop_bottom_t {
   font-size: 28rpx;
 }
-.pop_bottom .pop_bottom_btn {
-  overflow: hidden;
+.btn_num {
   width: 60rpx;
   height: 60rpx;
+  line-height: 54rpx;
+  border: 1rpx solid #DDD;
   border-radius: 8rpx;
-}
-.pop_bottom .pop_bottom_btn image {
-  display: block;
-  width: 100%;
-  height: 100%;
+  text-align: center;
 }
 .pop_bottom .pop_bottom_i {
   width: 60rpx;
@@ -254,14 +249,12 @@ page {
   bottom: 0;
   left: 0;
   width: 100%;
-  /* height: 98rpx; */
   padding: 9rpx 25rpx;
   border-top: 1rpx solid #EFEFF4;
 }
 .pop .pop_footer view {
   padding: 20rpx 0;
   border-radius: 40rpx;
-  background-color: #FFA00A;
   font-size: 34rpx;
   color: #fff;
   text-align: center;
@@ -296,7 +289,6 @@ page {
 .team_item_btn {
   margin: 9rpx 0 0 25rpx;
   padding: 10rpx 20rpx;
-  background-color: #FFA00A;
   color: #fff;
   border-radius: 4rpx;
 }

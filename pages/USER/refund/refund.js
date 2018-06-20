@@ -60,10 +60,10 @@ Page({
     ]
   },
   onLoad() {
-    this.refundGoodsList({p: this.data.p});
+    this.refundGoodsList({ p: this.data.p });
   },
   refundGoodsList(params) {
-    refundGoodsList(params).then(({status, result, msg}) => {
+    refundGoodsList(params).then(({ status, result, msg }) => {
       if (status == 1) {
         let items = this.data.items;
         (result || []).forEach(item => {
@@ -73,10 +73,9 @@ Page({
           let type = this.data.typeNames.find(type => {
             return type.id == item.type;
           })
-          item.typeName = type ? type.name:'';
+          item.typeName = type ? type.name : '';
           item.statusDetailName = statusDetail ? statusDetail.name : '';
         })
-        console.log(result, "result")
         this.setData({
           items: items.concat(result),
           p: ++this.data.p,
@@ -98,5 +97,11 @@ Page({
     if (!this.data.isAgain) return;
     this.setData({ isAgain: false });
     this.refundGoodsList({ p: this.data.p });
+  },
+  navigatorDetail(e) {
+    const id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: `/pages/USER/orderDetail/orderDetail?id=${id}`
+    })
   }
 })

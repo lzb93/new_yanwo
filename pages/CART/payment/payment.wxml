@@ -8,5 +8,5 @@
     <view class='color_red'>{{money}}元</view>
   </view>
 
-  <view class='payment_btn' bindtap='submit'>立即支付</view>
+  <view class='payment_btn main_bg' bindtap='submit'>立即支付</view>
 </view>

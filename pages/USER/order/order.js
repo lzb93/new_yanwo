@@ -133,14 +133,14 @@ Page({
     } else {
       app.cancelOrder = arr[index];
       wx.navigateTo({
-        url: `/pages/USER/order-cancel/order-cancel`
+        url: `/pages/USER/orderCancel/orderCancel`
       })
     }
   },
   navigatorDetail(e) {
     const id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: `/pages/HOME/detail/detail?id=${id}`
+      url: `/pages/USER/orderDetail/orderDetail?id=${id}`
     })
   },
   saleAfter(e) {
@@ -165,20 +165,10 @@ Page({
       .then(({status, result, msg}) => {
         if(status == 1) {
           wx.navigateTo({
-            url: `/pages/USER/order-logistic/order-logistic?no=${result.invoice_no}&code=${result.shipping_code}`
+            url: `/pages/USER/logistic/logistic?no=${result.invoice_no}&code=${result.shipping_code}&name=${result.shipping_name}`
           })
-          // let params = {
-          //   invoice_no: result.invoice_no,
-          //   shipping_code: result.shipping_code
-          // }
-          // return getQueryExpress(params);
         }
       })
-      // .then(({ status, result, msg}) => {
-      //   if(status == 1) {
-
-      //   }
-      // })
   },
   reset() {
     this.setData({

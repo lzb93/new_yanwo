@@ -2,7 +2,7 @@
 <view>
   <view class='order_item' wx:for="{{items}}" wx:key>
     <view class='user_order_body'>
-      <view class='seller_content flex_row' bindtap='navigatorTeam'>
+      <view class='seller_content flex_row' bindtap='navigatorTeam' data-id="{{item.order_id}}">
         <image src='{{host}}&c=Goods&a=goodsThumImages&width=140&height=140&goods_id={{item.goods_id}}'></image>
         <view class='seller_text flex_between'>
           <view class='seller_text_inner_left' style='font-size: 24rpx;'>
@@ -20,14 +20,8 @@
       </view>
     </view>
 
-
     <view class='order_item_footer clearfix'>
-
-      <!-- <navigator class='footer_btn right btn_pay' wx:if="{{item.order_button.pay_btn}}" 
-      url="/pages/CART/payment/payment?orderSn={{item.order_sn}}">付款</navigator>
-      <view class='footer_btn right btn_cancel' wx:if="{{item.order_button.cancel_btn}}" bindtap='cancelOrder'
-      data-index="{{index}}">取消订单</view> -->
-      <view class='footer_btn right btn_pay' wx:if="{{item.tflstatus == 1 || item.tfstatus == 1}}" 
+      <view class='footer_btn right btn_pay main_bg' wx:if="{{item.tflstatus == 1 || item.tfstatus == 1}}" 
       bindtap='shareTeam' data-index="{{index}}">邀请好友拼团</view>
       <view style='padding: 0 25rpx; font-size: 30rpx; text-align: right;' 
       wx:if="{{item.tflstatus == 2 || item.tfstatus == 2}}">成团成功</view>

@@ -1,0 +1,112 @@
+
+page {
+  background-color: #F9F9F9;
+  font-size: 24rpx;
+}
+
+.user_inte {
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+  background: linear-gradient(to right, #D22226, #ED790F, #D32425);
+  font-size: 34rpx;
+  text-align: center;
+}
+.avatar {
+  display: block;
+  width: 84rpx;
+  height: 84rpx;
+  margin: 10rpx auto;
+  border-radius: 50%;
+}
+
+.swiper {
+  width: 100%;
+  height: 465rpx;
+}
+.swiper swiper-item {  
+  border-radius: 0 0 6rpx 6rpx;
+}
+.swiper swiper-item .navigator {
+  margin: 0 10rpx;
+  background-color: #fff;
+}
+.swiper image {
+  display: block;
+  width: 100%;
+  height: 350rpx;
+}
+
+.layout_inte {
+  background-color: #fff;
+}
+.layout_inte .item {
+  width: 374rpx;
+  padding: 20rpx 0;
+  text-align: center;
+}
+.line {
+  width: 2rpx !important;
+  height: 40rpx;
+  margin-top: 20rpx;
+  background-color: #C2BFBD;
+}
+.icon_inte {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+  vertical-align: -10rpx;
+}
+.text {
+  font-size: 26rpx;
+}
+.tx_inte {
+  font-size: 26rpx;
+  color: #FDAB01;
+}
+
+/* 公用 */
+.layout_header {
+  padding: 20rpx;
+}
+.layout_inner {
+  padding: 20rpx 20rpx 0;
+}
+
+.product_item {
+  overflow: hidden;
+  width: 345rpx;
+  margin-bottom: 20rpx;
+  border-radius: 15rpx;
+  background-color: #fff;
+}
+.product_item .product_img {
+  display: block;
+  width: 100%;
+  height: 345rpx;
+}
+.product_content {
+  padding: 20rpx 10rpx;
+}
+.item_money {
+  line-height: 60rpx;
+}
+.item_btn {
+  position: relative;
+  width: 126rpx;
+  line-height: 60rpx;
+  text-align: center;
+  
+}
+.item_btn > image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60rpx;
+}
+.item_btn .text {
+  z-index: 9;
+  position: relative;
+  font-size: 22rpx;
+  color: #fff;
+}

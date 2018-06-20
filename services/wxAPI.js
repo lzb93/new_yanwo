@@ -75,12 +75,9 @@ export function getUserInfo() {
     wx.getUserInfo({
       lang: 'zh_CN',
       success(res) {
-        
         resolve(res)
-
       },
       fail(e) {
-        // console.log("没授权")
         reject(e)
       }
     })
@@ -143,7 +140,7 @@ export function toast(msg = '', type) {
     if (type == 'error') {
       wx.showToast({
         title: msg,
-        image: '/images/icon_error.png'
+        image: '/images/sibai.png'
       })
     } else {
       wx.showToast({

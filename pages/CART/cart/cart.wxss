@@ -1,6 +1,7 @@
 /* pages/CART/cart/cart.wxss */
 page {
   background-color: #EFEFF4;
+  padding-bottom: 120rpx;
 }
 .coupon {
   margin-bottom: 20rpx;
@@ -83,7 +84,7 @@ page {
   margin-left: 20rpx;
 }
 .cart_type {
-  margin: 14rpx 0 16rpx;
+  margin: 10rpx 0;
 }
 .cart_price {
   width: 440rpx;
@@ -193,7 +194,7 @@ page {
   left: 0;
   width: 100%;
   padding: 30rpx 0;
-  background-color: #FFA00A;
+  background-color: #E93342;
   color: #fff;
   font-size: 32rpx;
   text-align: center;

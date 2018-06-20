@@ -45,10 +45,6 @@ export default function request(url, data = {}, methods = 'GET') {
         return data
       }
     })
-    .catch((res) => {
-      console.log(res)
-      getApp().wxAPI.alert(res.msg);
-    })
 }
 
 // 上传图片（文件）

@@ -12,8 +12,8 @@ page {
   background-color: #fff;
 }
 .nav_item {display: inline-block; font-size: 28rpx;}
-.nav_item .nav_item_s {height: 80rpx; margin: 0 25rpx; line-height: 80rpx;}
-.nav_item .nav_item_s.selected {border-bottom: 4rpx solid #FFA00A; color: #FFA00A;}
+.nav_item .nav_item_s {height: 80rpx; margin: 0 25rpx; line-height: 80rpx; color: #B7B7B7;}
+.nav_item .nav_item_s.selected {border-bottom: 4rpx solid #666; color: #666;}
 
 .order_item {
   margin-bottom: 20rpx;
@@ -48,8 +48,9 @@ page {
 }
 
 .seller_content {
+  margin-bottom: 10rpx;
   padding: 12rpx 20rpx;
-  background: #fff;
+  background: #F9F9F9;
 }
 .seller_content > image {
   display: block;
@@ -82,7 +83,6 @@ page {
   text-align: center;
 }
 .btn_pay {
-  background-color: #FFA00A;
   color: #fff;
 }
 .btn_cancel {

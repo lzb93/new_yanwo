@@ -1,0 +1,16 @@
+
+<view>
+ <view>
+  <view class='flex_between record_head'>
+    <view>2018年6月</view>
+    <view>获取：<text class='color_red'>45</text>使用：<text class='color_gray1'>25</text></view>
+  </view>
+  <view>
+    <view class='flex_between'>
+      <view>交易退款积分扣回</view>
+      <view>-25</view>
+    </view>
+    <view>2018-6-3</view>
+  </view>
+ </view>
+</view>

@@ -15,12 +15,13 @@ page {
 .text {
   width: 33.3%;
   font-size: 30rpx;
-  color: #8A8A8A;
+  color: #B7B7B7;
   text-align: center;
+  border-bottom: 4rpx solid transparent;
 }
 .text.active {
-  border-bottom: 3rpx solid #FFA00A;
-  color: #FFA00A;
+  border-bottom: 4rpx solid #666;
+  color: #666;
 }
 .wrap {
   margin: 20rpx 25rpx;

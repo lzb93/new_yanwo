@@ -2,15 +2,10 @@
 import * as API from './services/API'
 import * as wxAPI from './services/wxAPI'
 import config from './utils/config'
-import { getUserInfo } from './services/auth';
+import { auth } from './services/auth';
 
-let setting = require('setting.js');
 App({
-  globalData: {
-    setting: setting
-  },
-  userInfo: {}, // 用户信息
-  // authorize:true,   //授权状态
+  userInfo: '', // 用户信息
   token: '', // 登录状态
   curEditAddress: {}, // 当前编辑的地址
   sendAddress: {}, //寄件人地址
@@ -22,13 +17,12 @@ App({
   API: API, // api
   http: config.http,// baseUrl
   host: config.host, 
-  getUserInfo: getUserInfo, // 登录流程
+  auth: auth, // 登录流程
   typeMsg: {
     id: null,
     index: null
   },
   onLaunch: function (e) {
-    this.userInfo.firstLeader = e.query.userId;
-    // getUserInfo();
+    auth();
   }
 })

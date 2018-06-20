@@ -1,4 +1,4 @@
-<!--pages/USER/order/order.wxml-->
+<!--pages/USER/order/order.wxml--> 
 <view>
   <view class='nav_wrap flex_between'>
     <view class='nav_item' wx:for="{{navs}}" wx:key>
@@ -7,10 +7,14 @@
     </view>
   </view>
 
-  <view class='order_item' wx:for="{{items}}" wx:key>
+  <view class='order_item' wx:for="{{items}}" wx:key> 
     <view class='user_order_body'>
+      <view class='flex_row' wx:if="{{item.order_sn}}" style='padding: 15rpx 25rpx;'>
+        <view style='font-size: 22rpx;'>订单号：</view>
+        <view style='font-size: 22rpx;'>{{item.order_sn}}</view>
+      </view>
       <view class='seller_content flex_row' bindtap='navigatorDetail'
-      data-id="{{good.goods_id}}" wx:for="{{item.order_goods}}" wx:for-item="good" wx:key>
+      data-id="{{good.order_id}}" wx:for="{{item.order_goods}}" wx:for-item="good" wx:key>
         <image src='{{host}}&c=Goods&a=goodsThumImages&width=140&height=140&goods_id={{good.goods_id}}'></image>
         <view class='seller_text flex_between'>
           <view class='seller_text_inner_left' style='font-size: 24rpx;'>
@@ -18,36 +22,33 @@
             <view style='margin-top: 20rpx; color: #B3B1B2;'>{{good.spec_key_name}}</view>
           </view>
           <view style='font-size: 22rpx; text-align: right;'>
-            <view>￥{{good.goods_price}}</view>
-            <view style='margin-top: 18rpx; color: #B3B1B2; text-decoration: line-through;'>￥{{good.final_price}}</view>
+            <view>￥{{good.final_price}}</view>
+            <view style='margin-top: 18rpx; color: #B3B1B2; text-decoration: line-through;'>￥{{good.goods_price}}</view>
             <view style='margin-top: 18rpx; color: #B3B1B2;'>X {{good.goods_num}}</view>
           </view>
         </view>
       </view>
 
-      <view class='flex_between' style='padding: 0 25rpx;'>
-        <view class='flex_row' wx:if="{{item.order_sn}}">
-          <view style='font-size: 22rpx;'>订单号：</view>
-          <view style='font-size: 22rpx;'>{{item.order_sn}}</view>
-        </view>
+      <view class='{{item.pay_name ? "flex_between":""}}' style='padding: 10rpx 25rpx 20rpx;'>
+        <view class='seller_m' wx:if="{{item.pay_name}}"><text class='color_gray'>付款方式：</text>{{item.pay_name}}</view>
         <view class='seller_m'>共{{item.order_goods.length}}件商品 合计：￥{{item.goods_price}}</view>
       </view>
       
     </view>
 
     <view class='order_item_footer clearfix'>
-       <view class='color_gray' wx:if="{{item.pay_status == 3 && item.order_status == 3}}"
+       <view class='color_gray' wx:if="{{item.order_status == 3}}"
         style='padding: 0 25rpx; font-size: 24rpx; text-align: right;'>
         {{item.order_status_detail}}
       </view> 
-      <view>
-        <navigator class='footer_btn right btn_pay' wx:if="{{item.order_button.pay_btn}}" 
+      <view> 
+        <navigator class='footer_btn right btn_pay main_bg' wx:if="{{item.order_button.pay_btn}}" 
         url="/pages/CART/payment/payment?orderSn={{item.order_sn}}">付款</navigator>
 
-        <view class='footer_btn right btn_pay' wx:if="{{item.order_button.receive_btn}}" 
+        <view class='footer_btn right btn_pay main_bg' wx:if="{{item.order_button.receive_btn}}" 
         data-order_id="{{item.order_id}}" bindtap='confirm'>确认收货</view>
 
-        <view class='footer_btn right btn_pay' wx:if="{{item.order_button.comment_btn}}"
+        <view class='footer_btn right btn_pay main_bg' wx:if="{{item.order_button.comment_btn}}"
         bindtap='comment' data-index="{{index}}">评论</view>
 
         <view class='footer_btn right btn_cancel' wx:if="{{item.order_button.cancel_btn}}" bindtap='cancelOrder'

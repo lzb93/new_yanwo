@@ -51,31 +51,35 @@ Page({
     let order = this.data.order;
     order.describe = e.detail.value;
   },
-  chooseImage() {
-    app.wxAPI.chooseImage({num: 9})
-      .then(({ tempFiles }) => {
-        const arr = [];
-        const length = tempFiles.length;
-        for (let i = 0; i < length; i++) {
-          uploadFile(app.host + 'c=User&a=uploadImg', tempFiles[i]).then(res => {
-            if (JSON.parse(res).status == 1) {
-              arr.push(JSON.parse(res).result);
-              if (arr.length == length) {
-                this.setData({
-                  imgs: arr
-                })
-              }
-            }
-          })
-        }
-      })
-      .catch(e => {
-        app.wxAPI.alert(e)
-      })
-  },
-  submit() {
+  // chooseImage() {
+  //   app.wxAPI.chooseImage({num: 9})
+  //     .then(({ tempFiles }) => {
+  //       const arr = [];
+  //       const length = tempFiles.length;
+  //       for (let i = 0; i < length; i++) {
+  //         uploadFile(app.host + 'c=User&a=uploadImg', tempFiles[i]).then(res => {
+  //           if (JSON.parse(res).status == 1) {
+  //             arr.push(JSON.parse(res).result);
+  //             if (arr.length == length) {
+  //               this.setData({
+  //                 imgs: arr
+  //               })
+  //             }
+  //           }
+  //         })
+  //       }
+  //     })
+  //     .catch(e => {
+  //       app.wxAPI.alert(e)
+  //     })
+  // },
+  submit() { 
     const order = this.data.order;
     const goods = order.order_goods[0];
+    if(!~this.data.reason.id) {
+      app.wxAPI.alert("原因未选择!");
+      return;
+    }
     let params = {
       rec_id: goods.rec_id,
       goods_id: goods.goods_id,
@@ -85,7 +89,7 @@ Page({
       goods_num: goods.goods_num,
       type: this.data.type,
       reason: this.data.reason.name,
-      describe: order.describe,
+      describe: order.describe || '',
       return_imgs: this.data.imgs
     }
     returnGoods(params).then(({status, result, msg}) => {

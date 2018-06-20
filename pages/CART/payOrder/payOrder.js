@@ -13,19 +13,32 @@ Page({
     address_id: '',
     pageType: '',
     selectCoupon: {},
-    isShowPop: false
+    isShowPop: false,
+    loading: false
   },
   onLoad(option) {
+    //判断是否会员
+    if(app.userInfo.is_member == 2) {
+      this.setData({
+        isMember: true
+      })
+    }
     if (option && option.order_sn) {
       this.setData({
         pageType: option.order_sn
       })
     }
+    
   },
   onShow() {
     app.orderAddress && this.setData({
       address: app.orderAddress
     });
+
+    this.setData({
+      loading: true
+    })
+    app.wxAPI.showLoading("加载中...");
     if (this.data.pageType) {
       this.teamOrder({ order_sn: this.data.pageType });
     } else {
@@ -34,6 +47,10 @@ Page({
   },
   teamOrder(params) {
     teamOrder(params).then(({ status, result, msg }) => {
+      app.wxAPI.hideLoading();
+      this.setData({
+        loading: false
+      })
       if (status == 1) {
         let items = [];
         result.order_goods.goods_price = result.order_goods.member_goods_price;
@@ -55,7 +72,7 @@ Page({
           app.wxAPI.confirm("去新建一个收货地址？")
             .then(() => {
               wx.navigateTo({
-                url: '/pages/EXPRESS/add-write/add-write?from=payOrder'
+                url: '/pages/USER/addAddress/addAddress?from=payOrder'
               })
             })
             .catch(() => {
@@ -65,10 +82,23 @@ Page({
       } else {
         app.wxAPI.alert(msg);
       }
+    }).catch(() => {
+      app.wxAPI.hideLoading();
+      this.setData({
+        loading: false
+      })
+      app.wxAPI.alert('加载失败！')
+        .then(() => {
+          wx.navigateBack()
+        })
     })
   },
   orderEdit(addressId) {
     orderEdit({ address_id: addressId }).then(({ status, result, msg }) => {
+      app.wxAPI.hideLoading();
+      this.setData({
+        loading: false
+      })
       if (status == 1) {
         this.setData({
           address: result.userAddress,
@@ -84,7 +114,7 @@ Page({
           app.wxAPI.confirm("去新建一个收货地址？")
             .then(() => {
               wx.navigateTo({
-                url: '/pages/EXPRESS/add-write/add-write?from=payOrder'
+                url: '/pages/USER/addAddress/addAddress?from=payOrder'
               })
             })
             .catch(() => {
@@ -94,6 +124,15 @@ Page({
       } else {
         app.wxAPI.alert(msg);
       }
+    }).catch(() => {
+      app.wxAPI.hideLoading();
+      this.setData({
+        loading: false
+      })
+      app.wxAPI.alert('加载失败！')
+        .then(() => {
+          wx.navigateBack()
+        })
     })
   },
   changeAddress() {

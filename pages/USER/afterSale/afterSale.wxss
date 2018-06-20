@@ -1,4 +1,4 @@
-/* pages/USER/afterSale/afterSale.wxss *//* pages/USER/order-cancel/order-cancel.wxss */
+
 page {
   background-color: #EFEFF4;
   padding-bottom: 106rpx;
@@ -80,7 +80,6 @@ page {
 }
 .footer_btn {
   padding: 35rpx 0;
-  background-color: #FFA00A;
   color: #fff;
   font-size: 28rpx;
   text-align: center;
@@ -131,7 +130,7 @@ page {
   left: 0;
   width: 100%;
   padding: 36rpx 0;
-  background-color: #FFA00A;
+  background-color: #E93342;
   font-size: 26rpx;
   color: #fff;
   text-align: center;

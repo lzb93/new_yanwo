@@ -1,9 +1,0 @@
-<!--pages/USER/authorize/authorize.wxml-->
-<view class='warp-authorize'>
-    <view class='img-authorize'>
-      <image src="../../../images/empty_cart.png"></image>
-    </view>
-    <view class='text-authorize'>购物车竟然是空的</view>
-    <view class='text-authorize'>在忙也记得买点东西赏犒自己~</view>
-</view>
-<button class='button-authorize' type="primary"  open-type='getUserInfo' bindgetuserinfo="bindGetUserInfo">授权</button>

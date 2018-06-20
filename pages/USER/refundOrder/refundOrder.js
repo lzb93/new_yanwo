@@ -29,7 +29,7 @@ Page({
     this.refundOrderList({ page: this.data.page })
   },
   refundOrderList(params) {
-    refundOrderList(params).then(({status, result, msg}) => {
+    refundOrderList(params).then(({ status, result, msg }) => {
       if (status == 1) {
         let items = this.data.items;
         (result || []).forEach(item => {
@@ -59,5 +59,11 @@ Page({
     if (!this.data.isAgain) return;
     this.setData({ isAgain: false });
     this.refundOrderList({ page: this.data.page });
+  },
+  navigatorDetail(e) {
+    const id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: `/pages/USER/orderDetail/orderDetail?id=${id}`
+    })
   }
 })

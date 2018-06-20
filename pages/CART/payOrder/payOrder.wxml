@@ -1,7 +1,6 @@
-<!--pages/USER/order-detail/order-detail.wxml-->
 
-<view>
-  <navigator class='add_address flex_between' wx:if="{{!address}}" url="/pages/EXPRESS/add-write/add-write?from=payOrder">
+<view wx:if="{{!loading}}">
+  <navigator class='add_address flex_between' wx:if="{{!address}}" url="/pages/USER/addAddress/addAddress?from=payOrder">
     <view class='color_gray'>新增地址</view>
     <view class='color_gray'> > </view>
   </navigator>
@@ -32,14 +31,14 @@
               <view style='margin-top: 20rpx; color: #B3B1B2;'>{{item.spec_key_name}}</view>
             </view>
             <view style='font-size: 22rpx; text-align: right;'>
-              <view>￥{{item.goods_price}}</view>
+              <view wx:if="{{!isMember}}">￥{{item.goods_price}}</view>
+              <view wx:if="{{isMember}}">￥{{item.member_goods_price}}</view>
               <view style='margin-top: 18rpx; color: #B3B1B2; text-decoration: line-through;' 
               wx:if="{{item.market_price}}">￥{{item.market_price}}</view>
               <view style='margin-top: 18rpx; color: #B3B1B2;'>X {{item.goods_num}}</view>
             </view>
           </view>
         </view>
-        <!-- <view class='seller_m'>共 {{totalPrice.goods_num}} 件商品  合计：￥{{totalPrice.total_fee}} </view> -->
       </view>
 
       <view class='list_item'>
@@ -74,12 +73,12 @@
       <view class='right color_red'>￥{{totalPrice.total_fee}}</view>
       <view class='right'>合计：   </view>
     </view>
-    <view class='footer_btn remind' bindtap='save' wx:if="{{!pageType}}">提交订单</view>
-    <view class='footer_btn remind' bindtap='payment' wx:if="{{pageType}}">立即支付</view>
+    <view class='footer_btn remind main_bg' bindtap='save' wx:if="{{!pageType}}">提交订单</view>
+    <view class='footer_btn remind main_bg' bindtap='payment' wx:if="{{pageType}}">立即支付</view>
   </view>
 </view>
 
-<view class='mask {{isShowPop ? "":"none"}}'></view> 
+<view class='mask {{isShowPop ? "":"none"}}' catchtap='useCoupon'></view> 
 <view class='pop {{isShowPop ? "":"none"}}'>
   <view>
     <view class='pop_header'>优惠券</view>
@@ -100,6 +99,6 @@
         </view>
       </view>
     </scroll-view>
-    <view class='pop_footer' bindtap='useCoupon'>关闭</view>
+    <view class='pop_footer main_bg' bindtap='useCoupon'>关闭</view>
   </view>
 </view> 

@@ -11,7 +11,7 @@
           <view class='collect_text color_gray'>库存： {{item.store_count}}</view>
         </view>
         <image class='icon_collect' bindtap='collectFn' data-index="{{index}}"
-        src='../../../images/{{item.is_on_sale ? "icon_checked_collect.png" : "icon_collect.png"}}'></image>
+        src='../../../images/{{item.is_on_sale ? "icon_collect_t.png" : "icon_collect_f.png"}}'></image>
       </view>
     </view>
   </view>

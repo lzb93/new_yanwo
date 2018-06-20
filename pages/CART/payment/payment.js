@@ -52,12 +52,12 @@ Page({
           app.wxAPI.toast('支付完成')
           setTimeout(() => {
             if(this.data.type) {
-              wx.switchTab({
-                url: '/pages/TEAM/fight/fight'
+              wx.navigateTo({
+                url: '/pages/TEAM/order/order'
               })
             } else {
-              wx.switchTab({
-                url: '/pages/HOME/home/home'
+              wx.navigateTo({
+                url: '/pages/USER/order/order?type=ALL'
               })
             }
           }, 2000)

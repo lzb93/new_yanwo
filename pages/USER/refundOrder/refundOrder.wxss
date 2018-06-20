@@ -35,8 +35,9 @@ page {
 }
 
 .seller_content {
+  margin-bottom: 10rpx;
   padding: 12rpx 20rpx;
-  background: #fff;
+  background: #F9F9F9;
 }
 .seller_content > image {
   display: block;

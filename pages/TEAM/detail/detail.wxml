@@ -1,13 +1,13 @@
 <import src="../../../utils/wxParse/wxParse.wxml" />
 
-<view>
+<view wx:if="{{!loading}}">
   <view>
-    <view id="haha">
+    <view>
       <!-- 轮播图 -->
       <swiper class='swiper_wrap' indicator-dots="{{true}}" autoplay="{{true}}" interval="{{5000}}" circular="{{true}}">
         <block wx:for="{{gallerys}}" wx:key>
           <swiper-item>
-            <image src="{{item.image_url}}" class="slide_image" />
+            <image src="{{http + item.image_url}}" class="slide_image" />
           </swiper-item>
         </block>
       </swiper>
@@ -16,13 +16,20 @@
         <view class='flex_between align_items'>
           <view class='flex_row align_items'>
             <view class='detail_m'>￥{{teamInfo.team_price}}</view>
-             <view class='color_gray' wx:if="{{goodsInfo.market_price}}" 
+             <view class='color_gray' wx:if="{{goodsInfo.market_price}}"
              style='text-decoration: line-through; font-size: 24rpx; margin-left: 15rpx;'>￥{{goodsInfo.market_price}}</view> 
           </view>
-          <view class='detail_b'>{{teamInfo.needer}}人拼单</view>
+          <view class='detail_b'>{{teamInfo.needer}}人成团 · 销量{{teamInfo.sales_sum}}笔</view>
         </view>
         <view class='detail_c tx_ov2'>{{teamInfo.goods_name}}</view>
-        <view class='detail_p right'>库存({{goodsInfo.store_count}}件)</view>
+        <view class='flex_between'>
+          <view style='font-size: 24rpx;'>
+            <view class='color_gray1' wx:if="{{teamInfo.team_notice}}">公告：{{teamInfo.team_notice}}</view>
+            <view wx:if="{{!teamInfo.team_notice}}"></view>
+          </view>
+          <view class='detail_p right'>库存({{goodsInfo.store_count}}件)</view>
+        </view>
+        
       </view>
     </view>
   </view>
@@ -48,7 +55,7 @@
             <!-- <view>{{item.time_limit}}</view> -->
           </view>
           <view>
-            <view class='team_item_btn' bindtap='openPop' data-found-id="{{item.found_id}}">去参团</view>
+            <view class='team_item_btn main_bg' bindtap='openPop' data-found-id="{{item.found_id}}">去参团</view>
           </view>
         </view>
         
@@ -96,33 +103,33 @@
 <view class="footer flex_row">
   <view class='footer_left flex_between'>
     <navigator url='/pages/HOME/home/home' open-type="switchTab" class='shouye'>
-      <image src='../../../images/index.png'></image>
+      <image src='../../../images/icon_home.png'></image>
       <view>首页</view>
     </navigator>
     <view class='shouye'>
-      <image src='../../../images/kefu.png'></image>
+      <image src='../../../images/icon_kf.png'></image>
       <view>客服</view>
       <button open-type='contact'></button>
     </view>
     <view class='shouye' bindtap='collectFn'>
-      <image src='../../../images/{{goodsInfo.is_collect ? "icon_checked_collect.png" : "icon_collect.png"}}'></image>
+      <image src='../../../images/{{goodsInfo.is_collect ? "icon_collect_t.png" : "icon_collect_f.png"}}'></image>
       <view>收藏</view>
     </view>
   </view>
   
   <view class='footer_right'>
     <view class='flex_box'>
-      <navigator class='footer_btn' url='/pages/HOME/detail/detail?id={{goodsInfo.goods_id}}'>单独购买</navigator>
-      <view class='footer_btn one_team' bindtap='openPop'>一键拼团</view>
+      <navigator class='footer_btn' url='/pages/KILL/detail/detail?id={{goodsInfo.goods_id}}'>单独购买</navigator>
+      <view class='footer_btn main_bg' bindtap='openPop'>一键拼团</view> 
     </view>
   
   </view>
 </view>
 
-<view class="mask {{isShowPop ? '' : 'none'}}"></view>
+<view class="mask {{isShowPop ? '' : 'none'}}" catchtap='colsePop'></view>
 <view class="pop {{isShowPop ? '' : 'none'}}">
   <view class='pop_close' bindtap='colsePop'>
-    <image src="../../../images/close.png"></image>
+    <image src="../../../images/icon_empt.png"></image>
   </view>
   <view class='pop_header'>
     <view class='pop_header_img'>
@@ -130,7 +137,8 @@
     </view>
     <view class='pop_header_c'>
       <view class='pop_header_m'>{{selectedSpec.price}}</view>
-      <view class='pop_header_k'>库存{{selectedSpec.store_count}}件</view>
+      <view class='pop_header_k'>库存{{selectedSpec.store_count}}件  
+      <view class='color_gray' style='display: inline-block;' wx:if="{{teamInfo.buy_limit > 0}}">最多购买{{teamInfo.buy_limit}}件</view></view>
       <view class='pop_header_s flex_row'>
         <view wx:if="{{specs.length > 0}}">请选择</view>
         <view wx:for="{{specs}}" wx:for-item="spec" wx:key style='margin-left: 10rpx;'>{{spec.spec_name}}</view>
@@ -150,20 +158,16 @@
     <view class='pop_bottom flex_between'>
       <view class='pop_bottom_t'>购买数量</view>
       <view class='flex_between'>
-        <view class='pop_bottom_btn'>
-          <image src='../../../images/reduce.png' bindtap='downNum'></image>
-        </view>
+        <view class='btn_num' bindtap='downNum'>-</view>
         <view class='pop_bottom_i'>
-          <input value='{{selectedSpec.num}}' bindinput="onblur"></input>
+          <input value='{{selectedSpec.num}}' bindblur="onblur" bindinput='onInput'></input>
         </view>
-        <view class='pop_bottom_btn'>
-          <image src='../../../images/add.png' bindtap='upNum'></image>
-        </view>
+        <view class='btn_num' bindtap='upNum'>+</view>
       </view>
     </view>
   </scroll-view>
 
-  <view class='pop_footer'>
+  <view class='pop_footer main_bg'>
     <view bindtap='sure'>确定</view>
   </view>
 </view>  

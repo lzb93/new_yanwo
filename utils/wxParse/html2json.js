@@ -12,6 +12,7 @@
  * detail : http://weappdev.com/t/wxparse-alpha0-1-html-markdown/184
  */
 
+const app = getApp();
 var __placeImgeUrlHttps = "https";
 var __emojisReg = '';
 var __emojisBaseSrc = '';
@@ -152,7 +153,7 @@ function html2json(html, bindName) {
                     imgUrl.splice(0, 1);
                 }
                 imgUrl = wxDiscode.urlToHttpUrl(imgUrl, __placeImgeUrlHttps);
-                node.attr.src = 'https://cc.meilashidai.cn'+imgUrl;
+                node.attr.src = app.http + imgUrl;
                 node.from = bindName;
                 results.images.push(node);
                 results.imageUrls.push(imgUrl);

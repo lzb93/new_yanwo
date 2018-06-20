@@ -20,10 +20,17 @@ Page({
   },
   onLoad() {},
   onShow() {
-    
-    cartList().then(this.render).catch(() => {
-      app.wxAPI.alert('登录超时!')
-    });
+    let token = app.token;
+    if (!token) {
+      app.wxAPI.alert('未登录!')
+      .then(() => {
+        wx.reLaunch({
+          url: '/pages/USER/user/user?from=pages/CART/cart/cart'
+        })
+      })
+      return
+    }
+    cartList().then(this.render)
   },
   render({ status, result, msg }) {
     if (status === 1) {
@@ -132,19 +139,6 @@ Page({
     }
     wx.navigateTo({ url: '/pages/CART/payOrder/payOrder' })
   },
-  start(e) {
-    let startX = e.changedTouches[0].clientX
-    console.log('start:' + startX)
-    this.setData({ startX: startX, disX: 0 })
-  },
-  move(e) {
-    let moveX = e.changedTouches[0].clientX
-    let disX = this.data.startX - moveX;
-    if (Math.abs(disX) < 30) {
-      return
-    }
-    this.setData({ moveX: moveX, disX: disX })
-  },
   end(e) {
     let endX = e.changedTouches[0].clientX
     let items = this.data.items
@@ -155,5 +149,11 @@ Page({
       items[index]['txtStyle'] = 'transform: translateX(0); transition: transform 0.1s ease-in;'
     }
     this.setData({ items: items })
+  },
+  jumpDetail(e) {
+    const id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: `/pages/KILL/detail/detail?id=${id}`
+    })
   }
 })

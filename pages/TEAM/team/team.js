@@ -1,4 +1,4 @@
-import { teamList, teamBanner } from '../../../services/API';
+import { teamList } from '../../../services/API';
 import { dalay } from '../../../utils/utils'
 
 const app = getApp();
@@ -18,15 +18,6 @@ Page({
   },
   onLoad() {
     this.getTeamList({ page: this.data.page });
-    // teamBanner().then(({ status, result, msg }) => {
-    //   if (status == 1) {
-    //     this.setData({
-    //       banners: result
-    //     })
-    //   } else {
-
-    //   }
-    // })
   },
   onReachBottom() {
     if (!dalay(1000)) return;
@@ -57,6 +48,12 @@ Page({
         isAgain: false,
         isNomore: true
       })
+    }
+  },
+  onShareAppMessage(res) {
+    return {
+      title: '拼团',
+      path: '/pages/TEAM/team/team?userId=' + app.userInfo.user_id,
     }
   }
 })

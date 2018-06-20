@@ -1,15 +1,17 @@
-/* pages/USER/pinglun/pinglun.wxss */
+page {
+  padding-bottom: 98rpx;
+}
 view{
   font-size:28rpx;
-
 }
 .weui-cell{
   background: #ffffff;
 }
 
 .shophead{
-  width:100rpx;height:100rpx;
-  margin-right: 20rpx;
+  width:100rpx;
+  height:100rpx;
+  padding-right: 20rpx;
 }
 textarea{
   width: 100%
@@ -24,7 +26,6 @@ textarea{
 }
 
 .xingji{
-  margin-top: 20rpx;
   padding-left: 0;
   border-top:0rpx;
   position:initial
@@ -40,7 +41,7 @@ textarea{
 .footer {
   display: flex; 
   position: fixed; 
-  z-index: -1; 
+  z-index: 999; 
   bottom: 0; 
   left: 0; 
   width: 100%; 
@@ -48,7 +49,6 @@ textarea{
   color: #fff; 
   height: 98rpx; 
   border-radius: 0;
-  background-color: #FFA00A; 
   justify-content: center; 
   align-items: center;
 }

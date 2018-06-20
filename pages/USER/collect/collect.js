@@ -68,7 +68,7 @@ Page({
     const index = e.currentTarget.dataset.index;
     const arr = this.data.items;
     wx.navigateTo({
-      url: '/pages/HOME/detail/detail?id=' + arr[index].goods_id
+      url: '/pages/KILL/detail/detail?id=' + arr[index].goods_id
     })
   }
 })

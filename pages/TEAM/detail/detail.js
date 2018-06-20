@@ -19,12 +19,22 @@ Page({
     selectedSpec: {},
     isShowPop: false,
     foundId: '',
-    teamFounds: [] ,
-    foundId:''
+    teamFounds: [],
+    foundId: '',
+    loading: false
   },
   onLoad(e) {
     const foundId = e.found_id;
+
+    app.wxAPI.showLoading("加载中...");
+    this.setData({
+      loading: true
+    })
     teamDetail({ goods_id: e.id, team_id: e.team_id }).then(({ status, result, msg }) => {
+      app.wxAPI.hideLoading();
+      this.setData({
+        loading: false
+      })
       if (status == 1) {
         const comments = [];
         (result.comment || []).map((item) => {
@@ -65,13 +75,24 @@ Page({
         }
         app.statistics = this.data.goodsInfo.comment_statistics;
         WxParse.wxParse('article', 'html', result.goods.goods_content, this, 5);
-        
+
       } else {
         app.wxAPI.alert(msg);
       }
     })
-    teamInfo({ goods_id: e.id }).then(({status, result, msg}) => {
-      if(status == 1) {
+    .catch(() => {
+      app.wxAPI.hideLoading();
+      this.setData({
+        loading: false
+      })
+      app.wxAPI.alert('加载失败！')
+        .then(() => {
+          wx.navigateBack()
+        })
+    })
+
+    teamInfo({ goods_id: e.id }).then(({ status, result, msg }) => {
+      if (status == 1) {
         this.setData({
           teamFounds: result.teamFounds
         })
@@ -96,12 +117,12 @@ Page({
   },
   openPop(e) {
     let foundId = '';
-    if(e) {
+    if (e) {
       foundId = e.currentTarget.dataset.foundId
-    } else if(this.data.foundId) {
+    } else if (this.data.foundId) {
       foundId = this.data.foundId;
     }
-    
+
     this.setData({
       isShowPop: true,
       foundId: foundId || ''
@@ -183,8 +204,9 @@ Page({
     if (this.data.foundId) {
       return;
     }
-    let selectedSpec = this.data.selectedSpec
-    if (selectedSpec.num < selectedSpec.store_count) {
+    let selectedSpec = this.data.selectedSpec;
+    const mastNum = this.data.teamInfo.buy_limit || this.data.goodsInfo.store_count;
+    if (selectedSpec.num < mastNum) {
       selectedSpec.num = ++selectedSpec.num
       this.setData({ selectedSpec })
     }
@@ -192,27 +214,52 @@ Page({
   onblur(e) {
     let num = e.detail.value;
     let selectedSpec = this.data.selectedSpec;
-    if (num > 0 && num <= selectedSpec.store_count) {
-      selectedSpec.num = num
+    const mastNum = this.data.teamInfo.buy_limit || this.data.goodsInfo.store_count;
+    if (num > 0 && num <= mastNum) {
+      selectedSpec.num = num;
+      this.setData({ selectedSpec })
+    } else if (num > mastNum) {
+      selectedSpec.num = mastNum;
+      this.setData({ selectedSpec })
+    } else if (num <= 0) {
+      selectedSpec.num = 1;
       this.setData({ selectedSpec })
     }
   },
   sure() {
+    let token = app.token;
+    if (!token) {
+      // 没登录处理....
+      app.wxAPI.alert('未登陆!')
+        .then(() => {
+          wx.reLaunch({
+            url: `/pages/USER/user/user?from=pages/TEAM/detail/detail&id=${this.data.goodsInfo.goods_id}&team_id=${this.data.teamInfo.team_id}`
+          })
+        })
+      return
+    }
     const selectedSpec = this.data.selectedSpec;
     let params = {
       team_id: selectedSpec.team_id,
       goods_num: selectedSpec.num,
       found_id: this.data.foundId || ''
     };
-    addOrder(params).then(({status, result, msg}) => {
-      if(status == 1) {
-        wx.navigateTo({
-          url: '/pages/CART/payOrder/payOrder?order_sn=' + result.order_sn
-        })
-        this.colsePop();
-      } else {
-        app.wxAPI.alert(msg);
-      }
-    })
+    addOrder(params)
+      .then(({ status, result, msg }) => {
+        if (status == 1) {
+          wx.navigateTo({
+            url: '/pages/CART/payOrder/payOrder?order_sn=' + result.order_sn
+          })
+          this.colsePop();
+        } else {
+          app.wxAPI.alert(msg);
+        }
+      })
+  },
+  onShareAppMessage(res) {
+    return {
+      title: this.data.goodsInfo.goods_name,
+      path: '/pages/KILL/detail/detail?id=' + this.data.goodsInfo.goods_id + '&team_id=' + this.data.teamInfo.team_id + '&userId=' + app.userInfo.user_id
+    }
   }
 })
