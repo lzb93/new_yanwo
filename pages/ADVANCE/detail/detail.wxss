@@ -1,0 +1,2 @@
+/* pages/ADVANCE/detail/detail.wxss */
+@import "../../TEAM/detail/detail.wxss"

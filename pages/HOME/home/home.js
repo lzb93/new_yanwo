@@ -22,7 +22,9 @@ Page({
       },
       {
         src: '../../../images/icon_home_zhekou.png',
-        name: '限时折扣'
+        name: '预购专区',
+        url: '/pages/ADVANCE/advance/advance'
+        // name: '限时折扣'
       },
       {
         src: '../../../images/icon_home_tuangou.png',

@@ -1,0 +1,37 @@
+<!--pages/ADVANCE/advance/advance.wxml-->
+<view class='advance-li'>
+   <image class='advance-left' src=''></image>
+   <view class='advance-right'>
+       <view class='advance-title'>【农家土猪肉新鲜梅花肉】农家土猪肉新鲜梅花肉农】农家土猪肉新鲜梅花肉农】农家土猪肉新鲜梅花肉农家土猪肉新鲜梅花肉</view>
+       <view class='advance-text'>预售价:<text class='red'>￥99</text></view>
+       <view class='advance-text'>2018年6月30日开售</view>
+       <navigator class='advance-btn' url='../detail/detail?id=161&team_id=8'>立即预定</navigator>
+   </view>
+</view>
+<view class='advance-li'>
+   <image class='advance-left' src=''></image>
+   <view class='advance-right'>
+       <view class='advance-title'>【农家土猪肉新鲜梅花肉】农家土猪肉新鲜梅花肉农】农家土猪肉新鲜梅花肉农】农家土猪肉新鲜梅花肉农家土猪肉新鲜梅花肉</view>
+       <view class='advance-text'>预售价:<text class='red'>￥99</text></view>
+       <view class='advance-text'>2018年6月30日开售</view>
+       <navigator class='advance-btn' url='../detail/detail?id=161&team_id=8'>立即预定</navigator>
+   </view>
+</view>
+<view class='advance-li'>
+   <image class='advance-left' src=''></image>
+   <view class='advance-right'>
+       <view class='advance-title'>【农家土猪肉新鲜梅花肉】农家土猪肉新鲜梅花肉农】农家土猪肉新鲜梅花肉农】农家土猪肉新鲜梅花肉农家土猪肉新鲜梅花肉</view>
+       <view class='advance-text'>预售价:<text class='red'>￥99</text></view>
+       <view class='advance-text'>2018年6月30日开售</view>
+       <navigator class='advance-btn' url='../detail/detail?id=161&team_id=8'>立即预定</navigator>
+   </view>
+</view>
+<view class='advance-li'>
+   <image class='advance-left' src=''></image>
+   <view class='advance-right'>
+       <view class='advance-title'>【农家土猪肉新鲜梅花肉】农家土猪肉新鲜梅花肉农】农家土猪肉新鲜梅花肉农】农家土猪肉新鲜梅花肉农家土猪肉新鲜梅花肉</view>
+       <view class='advance-text'>预售价:<text class='red'>￥99</text></view>
+       <view class='advance-text'>2018年6月30日开售</view>
+       <navigator class='advance-btn' url='../detail/detail?id=161&team_id=8'>立即预定</navigator>
+   </view>
+</view>

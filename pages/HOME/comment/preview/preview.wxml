@@ -1,0 +1,35 @@
+<!--pages/HOME/comment/preview/preview.wxml-->
+
+<!--轮播图-->
+  <view class="swiper-box preview" wx:for="{{imgs}}">
+    <view class='preview-top'>{{swiperCurrent+1}}/{{item.img.length}}</view>
+    <swiper  autoplay="{{autoplay}}"  interval="{{interval}}" duration="{{duration}}" class="swiper-ul" bindchange="swiperChange">
+      <block wx:for="{{item.img}}" wx:key="{{index}}">
+        <swiper-item class="swiper-li">
+          <image src="{{item}}" class="slide-image" mode="aspectFill" width="100%"/>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class='preview-btm'>
+       <view class=''>{{item.con}}</view>
+    </view>
+    <view class='preview-btns'>
+        <view style='width:12%'>展开</view>
+        <view style='width:70%'>浏览次数125841次</view>
+        <view style='width:18%;text-align:right;'>点赞190</view>
+    </view>
+  </view>
+  
+  <!-- 预览功能弹窗 -->
+   <!-- <view class='preview' wx:if="{{imgclick}}">
+    <block wx:for="{{imgs}}" wx:key>
+      <view class='preview-top'>1/8</view>
+      <view class='preview-img'  bindtouchstart="touchstart" bindtouchmove="touchmove" data-index="{{index}}">
+        <image src='{{item.img[0]}}'></image>
+      </view>
+      <view class='preview-btm'>
+        <view class=''>{{item.con}}</view>
+
+      </view>
+    </block>
+  </view>  -->

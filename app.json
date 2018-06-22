@@ -2,9 +2,13 @@
   "pages":[
     "pages/HOME/home/home",
     "pages/HOME/comment/comment",
+    "pages/HOME/comment/preview/preview",
     "pages/HOME/searchResult/searchResult",
 
     "pages/TYPE/type/type",
+
+    "pages/ADVANCE/advance/advance",
+    "pages/ADVANCE/detail/detail",
 
     "pages/INTEGRAL/integral/integral",
     "pages/INTEGRAL/payOrder/payOrder",
@@ -41,7 +45,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "溜达猪",
+    "navigationBarTitleText": "添加新功能项目",
     "navigationBarTextStyle":"black",
     "backgroundColor": "#efeff4"
   },

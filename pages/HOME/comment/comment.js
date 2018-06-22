@@ -43,6 +43,9 @@ Page({
     statistics: ''
   },
   onLoad(e) {
+    wx.navigateTo({
+      url: 'preview/preview',
+    })
     const goodsId = e.id;
     this.setData({ goodsId });
     const statistics = app.statistics || {};
