@@ -1,0 +1,135 @@
+/* pages/HOME/comment/problem/problem.wxss */
+
+view{
+  font-size: 26rpx;
+}
+.problem-top{
+
+}
+.problem-nav{
+   width: 100rpx;
+   height: 40rpx;
+   line-height: 40rpx;
+   text-align: center;
+   color: #999;
+   background: #fedec4;
+   border-radius: 10rpx;
+   display: inline-block;
+   margin: 10rpx;
+
+}
+.problem-top .active{
+  color: #fff;
+   background: #e46438;
+}
+.problem-ul{
+  margin-bottom: 150rpx;
+
+}
+.problem-li{
+  background: #fff;
+  border-radius:10px;
+  width: 700rpx;
+  margin: 25rpx;
+  display: table;
+  padding: 0 25rpx;
+  
+
+}
+.problem-li .clearfix{
+  margin-top: 20rpx;
+}
+
+
+.problem_ico{
+  width: 30rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 24rpx;
+  text-align: center;
+  display: inline-block;
+  background:#60d98a;
+  margin-right: 10rpx;
+  color: #ffffff;
+
+
+}
+.problem_wen .problem_ico{
+  background:#ff2200;
+}
+
+.problem-li-left{
+  text-align: center;
+  width: 50rpx;
+  float: left;
+
+
+}
+.problem-li-right{
+  width: 600rpx;
+  float: left;
+}
+.problem_text{
+  font-size: 26rpx;
+
+}
+.problem_wen .problem_text{
+  font-size: 28rpx;
+  font-weight:600;
+   
+}
+
+
+.problem_hui{
+    margin-left: 40rpx;
+   font-size: 26rpx;
+   color: #ccc;
+}
+
+.problem-time{
+  
+  margin: 50rpx 0 20rpx 0;
+}
+.problem-time view{
+  font-size: 22rpx;
+  color: #999;
+}
+
+
+/* foot */
+.problem-foot{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  height: 100rpx;
+  width: 100%;
+  background: #fff;
+  border-top:1px solid #999;
+
+
+}
+.problem-foot input{
+  width: 550rpx;
+  margin:20rpx 25rpx;
+  background: #dcdcdc;
+  height: 60rpx;
+  border-radius: 50px;
+  border: none;
+  display: inline-block;   
+  padding-left:30rpx; 
+}
+.problem-foot button{
+  width:120rpx;
+  margin:20rpx 25rpx 20rpx 5rpx; 
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  background: #ff2200;
+  color: #fff;
+  border-radius: 50px;
+  display: inline-block;
+  font-size: 26rpx;
+  padding: 0;
+
+}

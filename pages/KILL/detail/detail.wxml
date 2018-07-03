@@ -70,6 +70,27 @@
     </view>
   </view>
 
+    <view class='detail_comment'>
+    <view class='flex_between align_items'>
+      <view class='comment_title'>问大家（{{goods.statistics.total_sum}}）</view>
+      <navigator class='comment_link' url='/pages/HOME/comment/problem/problem' 
+      style="color: #535457;">查看全部 ></navigator>
+    </view>
+    <view class='problem'>
+       <view class='problem_ico'>问</view><text class='problem_text'>音质怎么样</text>
+       <view class='problem_hui'>1个回答</view>
+    </view>
+     <view class='problem'>
+       <view class='problem_ico'>问</view><text class='problem_text'>音质怎么样</text>
+       <view class='problem_hui'>1个回答</view>
+    </view>
+     <view class='problem'>
+       <view class='problem_ico'>问</view><text class='problem_text'>音质怎么样</text>
+       <view class='problem_hui'>1个回答</view>
+    </view>
+    
+  </view>
+
   <view class='detail_detail'>
     <view class='detail_header'>
       <view class='detail_title'>商品详情</view>

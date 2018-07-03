@@ -3,6 +3,8 @@
     "pages/HOME/home/home",
     "pages/HOME/comment/comment",
     "pages/HOME/comment/preview/preview",
+    "pages/HOME/comment/problem/problem",
+    "pages/HOME/comment/problem/answer/answer",
     "pages/HOME/searchResult/searchResult",
 
     "pages/TYPE/type/type",

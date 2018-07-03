@@ -1,0 +1,2 @@
+/* pages/HOME/comment/problem/answer/answer.wxss */
+@import "../problem.wxss"

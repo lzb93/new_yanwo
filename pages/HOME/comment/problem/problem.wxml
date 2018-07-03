@@ -1,0 +1,117 @@
+<!--pages/HOME/comment/problem/problem.wxml-->
+<view class='problem-top'>
+  <view class='problem-nav active'>全部</view>
+  <view class='problem-nav'>好用</view>
+  <view class='problem-nav'>不好用</view>
+  <view class='problem-nav'>一般般</view>
+  <view class='problem-nav'>很便宜</view>
+  <view class='problem-nav'>让你说</view>
+</view>
+
+<view class='problem-ul'>
+  <view class='problem-li' data-url="answer/answer" bindtap='gotoUrl'>
+    
+    <view class='clearfix problem_wen'>
+      <view class='problem-li-left'>
+        <view class='problem_ico '>问</view>
+      </view>
+      <view class='problem-li-right'>
+        <view class='problem_text'>音质怎么样音质怎么样音质怎么样音质怎么样音质怎么样音质怎么样音质怎么样</view>
+      </view>
+    </view>
+    <view class='clearfix'>
+      <view class='problem-li-left'>
+        <view class='problem_ico'>问</view>
+      </view>
+      <view class='problem-li-right'>
+        <view class='problem_text'>音质怎么样音质怎么样音质怎么样音质怎么样音质怎么样音质怎么样音质怎么样</view>
+      </view>
+    </view>
+    <view class='clearfix'>
+      <view class='problem-li-left'>
+        <view class='problem_ico'>问</view>
+      </view>
+      <view class='problem-li-right'>
+        <view class='problem_text'>音质怎么样音质怎么样音质怎么样音质怎么样音质怎么样音质怎么样音质怎么样</view>
+      </view>
+    </view>
+
+    <view class='problem-time clearfix'>
+      <view class='left'>全部答案</view>
+      <view class='right'>更新于2018-03-08</view>
+    </view>
+
+  </view>
+  <view class='problem-li'>
+    
+    <view class='clearfix problem_wen'>
+      <view class='problem-li-left'>
+        <view class='problem_ico '>问</view>
+      </view>
+      <view class='problem-li-right'>
+        <view class='problem_text'>音质怎么样音质怎么样音质怎么样音质怎么样音质怎么样音质怎么样音质怎么样</view>
+      </view>
+    </view>
+    <view class='clearfix'>
+      <view class='problem-li-left'>
+        <view class='problem_ico'>问</view>
+      </view>
+      <view class='problem-li-right'>
+        <view class='problem_text'>音质怎么样音质怎么样音质怎么样音质怎么样音质怎么样音质怎么样音质怎么样</view>
+      </view>
+    </view>
+    <view class='clearfix'>
+      <view class='problem-li-left'>
+        <view class='problem_ico'>问</view>
+      </view>
+      <view class='problem-li-right'>
+        <view class='problem_text'>音质怎么样音质怎么样音质怎么样音质怎么样音质怎么样音质怎么样音质怎么样</view>
+      </view>
+    </view>
+
+    <view class='problem-time clearfix'>
+      <view class='left'>全部答案</view>
+      <view class='right'>更新于2018-03-08</view>
+    </view>
+
+  </view>
+  <view class='problem-li'>
+    
+    <view class='clearfix problem_wen'>
+      <view class='problem-li-left'>
+        <view class='problem_ico '>问</view>
+      </view>
+      <view class='problem-li-right'>
+        <view class='problem_text'>音质怎么样音质怎么样音质怎么样音质怎么样音质怎么样音质怎么样音质怎么样</view>
+      </view>
+    </view>
+    <view class='clearfix'>
+      <view class='problem-li-left'>
+        <view class='problem_ico'>问</view>
+      </view>
+      <view class='problem-li-right'>
+        <view class='problem_text'>音质怎么样音质怎么样音质怎么样音质怎么样音质怎么样音质怎么样音质怎么样</view>
+      </view>
+    </view>
+    <view class='clearfix'>
+      <view class='problem-li-left'>
+        <view class='problem_ico'>问</view>
+      </view>
+      <view class='problem-li-right'>
+        <view class='problem_text'>音质怎么样音质怎么样音质怎么样音质怎么样音质怎么样音质怎么样音质怎么样</view>
+      </view>
+    </view>
+
+    <view class='problem-time clearfix'>
+      <view class='left'>全部答案</view>
+      <view class='right'>更新于2018-03-08</view>
+    </view>
+
+  </view>
+</view>
+
+<!-- 提问 -->
+<view class='problem-foot'>
+   <input placeholder='向152215买家提问！4~40字'></input>
+   <button>提问</button>
+</view>

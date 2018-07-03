@@ -1,3 +1,4 @@
+<!-- <web-view src="https://hailixiangfung.com/wap/index.htm"></web-view> -->
 <view class=''>
   <view class='search_container'>
     <view class='search flex_between'>
@@ -5,10 +6,7 @@
         <view class='search_icon'>
           <image src='../../../images/icon_search.png'></image>
         </view>
-        <view class='search_input'>
-          <input placeholder='使用关键词快速查找商品' value="{{keyword}}" type="text"placeholder-class="psection" confirm-type="search"
-          maxlength="20" bindblur="onblur" bindinput="oninput" bindconfirm="search"></input>
-        </view>
+         
       </view>
       <view class="icon_empt" wx:if="{{isEmpt}}" bindtap="empt">
         <image src="../../../images/icon_empt.png"></image>
