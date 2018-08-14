@@ -1,0 +1,30 @@
+<!--pages/HOME/comment/mjxdel/mjxdel.wxml-->
+    <view class='mjxlist'>
+    <!-- data-url="preview/preview?id={{maijiaxiu.comment_id}}" bindtap='gotoUrl' data-qid="{{item.comment_id}}"  -->
+      <view class='mjxlist-list'>
+        <view class='mjxlist-imgs'>
+            <view class='mjxlist-name'> {{maijiaxiu.username}}</view>
+        </view>
+        <view class='mjxdel-con'>
+            <view class=''>{{maijiaxiu.content}}</view>
+        </view>
+        <view class='mjxdel-img' wx:for="{{maijiaxiu.img}}" wx:key> 
+            <image src='{{http + item}}'></image>
+        </view>
+       
+
+      </view>
+      
+    </view>
+
+    <view class='mjxdel-foot'>
+      <view class='btn' bindtap='pinglun'>评论</view>
+      <view class='btn' bindtap='dianzan'>点赞</view>
+      <!-- <image src='../../../../images/'></image> -->
+    </view>
+
+    <view class='mjxdel-alt' wx:if="{{pingluntrue}}">
+        <input placeholder=''  bindinput='onInput' type="text" value="{{comment}}"></input>       
+        <view class='btn' bindtap='showanswer' style='background:#34a123;color:#fff;'>发布</view>
+        <view class='btn' bindtap='pinglunguanbi' style='right:0'>关闭</view>
+    </view>

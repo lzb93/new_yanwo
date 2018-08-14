@@ -1,0 +1,12 @@
+<!--pages/HOME/comment/mjxlist/mjxlist.wxml-->
+    <view class='mjxlist'>
+      <view class='mjxlist-list' wx:for="{{maijiaxiu}}" wx:key data-url="../mjxdel/mjxdel?id={{item.comment_id}}" bindtap='gotoUrl' data-qid="{{item.comment_id}}">
+        <view class='mjxlist-imgs'>
+            <image class='' src='{{http + item.img[0]}}'></image>
+            <view class='mjxlist-name'> {{item.username}}</view>
+            <view class='mjxlist-zan'> 赞：{{item.zan_num}}</view>
+        </view>
+
+      </view>
+      
+    </view>

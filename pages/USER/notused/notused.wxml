@@ -5,7 +5,8 @@
     bindtap='switchTab' data-type="{{item.type}}">{{item.name}}</view>
   </view> 
   <view class='wrap'>
-    <view class='ticket_wrap' wx:for="{{coupons}}" wx:key>
+
+    <navigator class='ticket_wrap' wx:for="{{coupons}}" wx:key url='../../CART/cart/cart' open-type="switchTab">
       <view class='ticket_body flex_row'>
         <view class='ticket_left'>
           <view class='left_header flex_row'>
@@ -28,7 +29,7 @@
       </view>
       <view class='half half_top'></view>
       <view class='half half_bottom'> </view>
-    </view>
+    </navigator>
   </view>
 
   <view class="weui-loadmore" wx:if="{{!isNomore}}">

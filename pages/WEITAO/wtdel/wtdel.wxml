@@ -1,0 +1,63 @@
+<!--pages/WEITAO/wtdel/wtdel.wxml-->
+<import src="../../../utils/wxParse/wxParse.wxml" />
+
+<view class='youm-li' data-id='{{main.article_id}}'>
+           <view class="user-info">
+                <view class="user-img">
+                  <image src="https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83eqRRTvvCBnHhFbqA7Tl1MGEpZhjicjIFbHNpncGAianS0UJHFcpCCYxg8TgXiciaPbLS8GZiaQN5CX0NJQ/132"></image>
+                </view>
+                <view class="user-detail">
+                  <view class="user-nic">
+                    说明
+                  </view>
+                  <view class="user-infos">
+                     <text >{{maincon_time}}</text>
+                  </view>
+                </view>
+              </view>
+
+
+              <!-- main -->
+
+              <view class='wtdel-main'>
+                <block>
+                  <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+                </block>
+              
+              </view>
+</view>
+
+<view class="footer flex_row">
+  <view class='footer_inp'>
+    <view class='input' bindtap='plalert'>评论...</view>
+  </view>
+  <view class='footer_left flex_between'>
+    <navigator url='/pages/WEITAO/wtpinglun/wtpinglun?article_id={{article_id}}'  class='shouye'>
+      <image src='../../../images/icon_collect_f.png'></image>
+      <view>评论{{main.comment_num}}</view>
+    </navigator>
+    <view class='shouye'>
+      <image src='../../../images/icon_collect_f.png'></image>
+      <view>查看{{main.click}}</view>
+      <button open-type='contact'></button>
+    </view>
+    <view class='shouye' bindtap='taozan'>
+      <image src='../../../images/icon_collect_f.png'></image>
+      <view>点赞{{main.zan_num}}</view>
+    </view>
+  </view>
+  
+ 
+</view>
+
+
+<view class='pinlunalert' wx:if="{{plalert}}">
+   <view>
+      <textarea placeholder='评论' bindblur="setpingjia" bindinput='onInput' type="text" value="{{comment}}"></textarea>
+      <view>
+         <view class='albtn' bindtap='gbplalert'>取消</view>
+         <view class='albtn lv' bindtap='taoaddComment'>发布</view>
+
+      </view>
+   </view>
+</view>

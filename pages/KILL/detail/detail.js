@@ -1,4 +1,4 @@
-import { goodsInfo, goodsdetail, addCart, collectGoods, killActivity } from '../../../services/API';
+import { goodsInfo, goodsdetail, addCart, collectGoods, killActivity, questionlist, showIndex} from '../../../services/API';
 import { js_date_time } from '../../../utils/utils';
 
 const WxParse = require('../../../utils/wxParse/wxParse.js')
@@ -17,9 +17,17 @@ Page({
     goods: {},
     gallerys: [],
     from: 'buy',
-    loading: false
+    loading: false,
+
+    // 问答和买家秀块
+
+    wenda:[],
+    maijiaxiu:{},
+    
+
   },
   onLoad(options) {
+    console.log(options.id)
     this.setData({
       itemId: options.itemId || '',
       goodsId: options.id
@@ -34,6 +42,27 @@ Page({
         WxParse.wxParse('article', 'html', result.goods_content, this, 5);
       }
     })
+    
+    // 问题列表
+    questionlist({ goods_id: options.id }).then(({ status, result, msg }) => {
+      if (status == 1) {
+        this.setData({
+          wenda: result.data,
+        })
+
+      }
+    })
+    showIndex({ goods_id: options.id }).then(({ status, result, msg }) => {
+      if (status == 1) {
+        this.setData({
+          maijiaxiu: result
+        })
+
+      }
+    })
+ 
+
+   
   },
   goodsInfo(params) {
     this.setData({
@@ -101,7 +130,11 @@ Page({
             img: goodsInfo.original_img,
             marketPrice: goodsInfo.market_price,
             VIPPrice: goodsInfo.member_price,
-            price: goodsInfo.shop_price
+            price: goodsInfo.shop_price,
+            // 标签
+            label_position: goodsInfo.label_position,
+            label_img: goodsInfo.label_img,
+
           }
 
           if (activity.prom_type == 1 && specs.length == 0) {

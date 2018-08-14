@@ -1,0 +1,31 @@
+/* pages/WEITAO/wtpinglun/wtpinglun.wxss */
+@import '/pages/TEAM/detail/detail.wxss';
+
+.pinlunalert{
+  width: 600rpx;
+  height: 300rpx;
+  position: fixed;
+  left: 80rpx;
+  top: 400rpx;
+  box-shadow: 2px 2px 10px #dcdcdc;
+  background: #ffffff;
+  border-radius:8px; 
+
+}
+.albtn{
+  width: 50%;
+  float: left;
+  text-align: center;
+  line-height: 90rpx;
+  background: #dcdcdc;
+  
+}
+.pinlunalert textarea{
+  width: 100%;
+  height: 210rpx;
+  padding: 15rpx;
+}
+.lv{
+  background: green;
+  color: #ffffff;
+}

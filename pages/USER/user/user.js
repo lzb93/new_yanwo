@@ -54,6 +54,11 @@ Page({
         name: '领劵中心',
         src: '../../../images/icon_user_coupon.png',
         url: '/pages/USER/notused/notused'
+      },
+      {
+        name: '围住神经猫',
+        src: '../../../images/icon_user_coupon.png',
+        url: '/pages/TYPE/sjmindex/sjmindex'
       }
     ]
   },

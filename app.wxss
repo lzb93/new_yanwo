@@ -15,6 +15,10 @@ page {
 view, navigator, image, input, scroll-view, text {
   box-sizing: border-box;
   color: #2A2A2A;
+  
+}
+image{
+  max-width: 100%;
 }
 .clearfix:after{
   content:"\200B";

@@ -37,12 +37,15 @@ Page({
     ]
   },
   onLoad() {
-    
+    // wx.navigateTo({
+    //   url: `/pages/TYPE/sjm/sjm`
+    // })
   },
   onShow() {
     app.wxAPI.showLoading('加载中...');
     homePage().then(({ status, result, msg }) => {
-      app.wxAPI.hideLoading();
+    
+    
       if (status == 1) {
         this.setData({
           banners: result.banner,
@@ -52,6 +55,7 @@ Page({
       } else {
         app.wxAPI.alert(msg);
       }
+      app.wxAPI.hideLoading();
     })
   },
   onblur(e) {

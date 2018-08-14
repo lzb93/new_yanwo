@@ -1,0 +1,41 @@
+<!--pages/WEITAO/wtpinglun/wtpinglun.wxml-->
+<view>
+  <view class='detail_comment'>
+    <view class='flex_between align_items'>
+      <view class='comment_title'>评论（{{total}}）</view>
+      
+    </view>
+    <view class='comment_inner'>
+      <view class='comment_item' wx:for="{{main}}" wx:if="{{index < 2}}" wx:key>
+        <view class='flex_between' bindtap='plalert' data-id='{{item.comment_id}}'>
+          <view class='flex_row'>
+            <!-- <image class='comment_avatar' src='{{item.head_pic}}'></image>
+            <view class='comment_name'>{{item.username}}</view> -->
+            <image class='comment_avatar' src="https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83eqRRTvvCBnHhFbqA7Tl1MGEpZhjicjIFbHNpncGAianS0UJHFcpCCYxg8TgXiciaPbLS8GZiaQN5CX0NJQ/132"></image>
+            <view class='comment_name'>名字</view> 
+          </view>
+          <view class='comment_date color_gray'>{{item.startTime}}</view>
+        </view>
+
+        <view class='comment_text'>{{item.content}}</view>
+
+      </view>
+    </view>
+  </view>
+
+
+
+
+
+</view>
+
+<view class='pinlunalert' wx:if="{{plalert}}">
+   <view>
+      <textarea placeholder='评论' bindblur="setpingjia" bindinput='onInput' type="text" value="{{comment}}"></textarea>
+      <view>
+         <view class='albtn' bindtap='gbplalert'>取消</view>
+         <view class='albtn lv' bindtap='taoaddAnswer'>发布</view>
+
+      </view>
+   </view>
+</view>

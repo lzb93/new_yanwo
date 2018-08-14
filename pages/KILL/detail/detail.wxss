@@ -284,3 +284,45 @@ page {
    font-size: 26rpx;
    color: #ccc;
 }
+.maijiaxiu{
+
+}
+.mjx-li{
+  width: 25%;
+  display: inline-block;
+  padding: 5rpx;
+
+}
+.mjx-li image{
+  width: 100%;
+}
+
+
+/* 自定义标签 */
+.custom{
+  max-width: 100rpx;
+  max-height: 100rpx;
+  
+  position: absolute;
+
+}
+.custom-tl{
+  top: 0;
+  left: 0;
+}
+.custom-tr{
+  top: 0;
+  right: 0;
+}
+.custom-c{
+  top:100rpx;
+  left:135rpx;
+}
+.custom-bl{
+  bottom: 0;
+  left: 0;
+}
+.custom-br{
+  bottom: 0;
+  right: 0;
+}

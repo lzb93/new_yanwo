@@ -2,12 +2,18 @@
   "pages":[
     "pages/HOME/home/home",
     "pages/HOME/comment/comment",
+    "pages/HOME/comment/mjxlist/mjxlist",
+    "pages/HOME/comment/mjxdel/mjxdel",
     "pages/HOME/comment/preview/preview",
     "pages/HOME/comment/problem/problem",
     "pages/HOME/comment/problem/answer/answer",
     "pages/HOME/searchResult/searchResult",
 
+    "pages/MODULES/Modules/Modules",
+    
     "pages/TYPE/type/type",
+    "pages/TYPE/sjm/sjm",
+    "pages/TYPE/sjmindex/sjmindex",
 
     "pages/ADVANCE/advance/advance",
     "pages/ADVANCE/detail/detail",
@@ -23,6 +29,10 @@
     "pages/TEAM/detail/detail",
     "pages/TEAM/found/found",
     "pages/TEAM/order/order",
+
+    "pages/WEITAO/weitao/weitao",
+    "pages/WEITAO/wtdel/wtdel",
+    "pages/WEITAO/wtpinglun/wtpinglun",
 
     "pages/CART/cart/cart",
     "pages/CART/payOrder/payOrder",
@@ -68,6 +78,12 @@
         "iconPath": "./images/icon_type_f.png",
         "selectedIconPath": "./images/icon_type_t.png",
         "text": "分类"
+      },
+      {
+        "pagePath": "pages/WEITAO/weitao/weitao",
+        "iconPath": "./images/icon_home_f.png",
+        "selectedIconPath": "./images/icon_home_t.png",
+        "text": "微淘"
       },
       {
         "pagePath": "pages/CART/cart/cart",

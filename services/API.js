@@ -100,6 +100,58 @@ export function getGoodsComment(params) {
   return post(config.host + 'c=Goods&a=getGoodsComment', params)
 }
 
+// 问答模块list
+export function questionlist(params) {
+  return post(config.http + '/index.php?m=api&c=question&a=getList', params)
+}
+// 获取单个问答
+export function questioninfo(params) {
+  return post(config.http + '/index.php?m=api&c=question&a=getOne', params)
+}
+// 发表问题
+export function questionadd(params) {
+  return post(config.http + '/index.php?m=api&c=question&a=addQuestion', params)
+}
+// 回答问题 question/answer/
+export function questionanswer(params) {
+  return post(config.http + '/index.php?m=api&c=question&a=addAnswer', params)
+}
+
+
+
+
+// 买家秀模块
+// 买家秀list
+export function showlist(params) {
+  return post(config.http + '/index.php?m=api&c=show&a=getList', params)
+}
+
+// 买家秀list  showIndex
+export function showIndex(params) {
+  return post(config.http + '/index.php?m=api&c=show&a=getIndex', params)
+}
+// 获取单个问答
+export function showinfo(params) {
+  return post(config.http + '/index.php?m=api&c=show&a=getOne', params)
+}
+// 发表问题
+export function showadd(params) {
+  return post(config.http + '/index.php?m=api&c=show&a=addshow', params)
+}
+// 回答问题 question/answer/
+export function showanswer(params) {
+  return post(config.http + '/index.php?m=api&c=show&a=addAnswer', params)
+}
+
+// zan
+export function showzan(params) {
+  return post(config.http + '/index.php?m=api&c=show&a=zan', params)
+}
+
+
+
+
+
 //加入购物车
 export function addCart(params) {
   return post(config.host + 'c=Cart&a=addCart', params)
@@ -216,4 +268,78 @@ export function getRegion(params) {
 //商品搜索
 export function search(params) {
   return get(config.host + 'c=Goods&a=search', params)
+}
+
+
+// 微淘
+
+// 获取分类(导航栏)
+// index.php ? m = api & c=tao & a=getCat
+export function taogetCat(params) {
+  return get(config.host + 'c=tao&a=getCat', params)
+}
+
+
+// 获取列表
+// index.php ? m = api & c=tao & a=getList
+export function taogetList(params) {
+  return get(config.host + 'c=tao&a=getList', params)
+}
+
+
+// 获取单篇文章
+// index.php ? m = api & c=tao & a=getOne & article_id=get / post
+export function taogetOne(params) {
+  return get(config.host + 'c=tao&a=getOne', params)
+}
+
+// 获取评论
+// index.php ? m = api & c=tao & a=getComment & article_id=
+// get / post
+export function taogetComment(params) {
+  return get(config.host + 'c=tao&a=getComment', params)
+}
+
+// 发表评论post
+// index.php ? m = api & c=tao & a=addComment & article_id=
+// 必填参数content
+export function taoaddComment(params) {
+  return get(config.host + 'c=tao&a=addComment', params)
+}
+
+
+// 回复评论post
+// index.php ? m = api & c=tao & a=addAnswer & comment_id=
+// 必填参数content
+export function taoaddAnswer(params) {
+  return get(config.host + 'c=tao&a=addAnswer', params)
+}
+
+// 点赞
+// index.php ? m = api & c=tao & a=zan & article_id=
+// get / post
+export function taozan(params) {
+  return get(config.host + 'c=tao&a=zan', params)
+}
+
+
+// 围住红包模块接口 
+// 获取游戏配置信息  index.php?m=api&c=enclose&a=index
+
+export function encloseindex(params) {
+  return get(config.host + 'c=enclose&a=index', params)
+}
+
+
+// 达到分数条件，领取奖品
+// index.php ? m = api & c=enclose & a=getPrize
+// 必填参数step(int)步数
+export function enclosegetPrize(params) {
+  return get(config.host + 'c=enclose&a=getPrize', params)
+}
+
+// 分享游戏，成功游戏次数 + 1
+// index.php ? m = api & c=enclose & a=share
+export function encloseshare(params) {
+  return get(config.host + 'c=enclose&a=share', params)
 }

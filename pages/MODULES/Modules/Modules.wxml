@@ -1,6 +1,5 @@
-<!-- <web-view src="https://hailixiangfung.com/wap/index.htm"></web-view> -->
-
-<view class=''>
+<!--pages/MODULES/Modules/Modules.wxml-->
+<template name="search">
   <view class='search_container'>
     <view class='search flex_between'>
       <view class='search_left flex_row'>
@@ -15,7 +14,9 @@
       <view class='search_btn main_color' bindtap="search">搜索</view>
     </view>
   </view>
+</template>
 
+<template name='banner'>
   <swiper wx:if="{{banners.length > 0}}" class='swiper' indicator-dots="{{true}}" autoplay="{{true}}" interval="{{4000}}" 
   circular="{{true}}">
     <block>
@@ -31,7 +32,10 @@
       </swiper-item>
     </block>
   </swiper>
+</template>
 
+
+<template name='nav'>
   <view class='layout'>
     <view class='layout_inner flex_between' style='padding: 20rpx 50rpx; background: #fff;'>
       <view class='nav_item' wx:for="{{navTabs}}" wx:key bindtap='tabList' data-index="{{index}}">
@@ -40,7 +44,28 @@
       </view>
     </view>
   </view>
+</template>
 
+
+<template name='new'>
+  <view class='layout' wx:if="{{first.length > 0}}">
+    <view class='layout_header'>
+      <view class='layout_title'>新品上市</view>
+    </view>
+    <scroll-view scroll-x class='layout_inner' style='white-space: nowrap; background: #fff; padding: 30rpx 0 0;'>
+      <navigator class='activity_item' wx:for="{{first}}" wx:key url='/pages/KILL/detail/detail?id={{item.goods_id}}'>
+        <image class='img' src='{{host}}&c=Goods&a=goodsThumImages&width=700&height=340&goods_id={{item.goods_id}}' 
+        mode='aspectFit'></image>
+        <view class='item_content'>
+          <view class='text tx_ov'>{{item.goods_name}}</view>
+          <text class='color_red'>￥{{item.shop_price}}</text>
+        </view>
+      </navigator>
+    </scroll-view>
+  </view>
+</template>
+
+<template name='hot'>
   <view class='layout' wx:if="{{first.length > 0}}">
     <view class='layout_header'>
       <view class='layout_title'>热门商品</view>
@@ -56,8 +81,10 @@
       </navigator>
     </scroll-view>
   </view>
+</template>
 
-  <view class='layout' wx:if="{{third.length > 0}}">
+<template name='recommend'>
+    <view class='layout' wx:if="{{third.length > 0}}">
     <view class='layout_header'>
       <view class='layout_title'>商品推荐</view>
     </view>
@@ -85,5 +112,4 @@
       </navigator>
     </view>
   </view>
-
-</view>
+</template>

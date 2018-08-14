@@ -1,0 +1,53 @@
+      <view class='nav_wrap flex_between'>
+        <view class='nav_item' wx:for="{{navs}}" wx:key>
+          <view class="nav_item_s {{activeType == item.cat_id ? 'selected' : ''}}" 
+          data-type="{{item.cat_id}}" bindtap='tabNavBar'>{{item.cat_name}}</view>
+        </view>
+      </view>
+
+     <view class="youm-ul">
+          <view class="youm-li" wx:for="{{taolist}}" wx:key="*key">
+              <view class="user-info"  data-url="../wtdel/wtdel?user={{item.user}}&&article_id={{item.article_id}}" bindtap="gotoUrl">
+                <view class="user-img">
+                  <!-- <image src="{{item.cover_img}}"></image> -->
+                     <image src="https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83eqRRTvvCBnHhFbqA7Tl1MGEpZhjicjIFbHNpncGAianS0UJHFcpCCYxg8TgXiciaPbLS8GZiaQN5CX0NJQ/132"></image> 
+                </view>
+                <view class="user-detail">
+                  <view class="user-nic">
+                    <!-- {{item.name}} -->这是名字
+                  </view>
+                  <view class='user-infos'>{{item.add_time}}</view>
+
+                </view>
+              </view>
+              <view  data-url="../wtdel/wtdel?user={{item.user}}&&article_id={{item.article_id}}" catchtap ="gotoUrl">
+                <view class="user-comment">
+                  {{item.title}}
+                </view>
+                <view class="imgs-ul">
+                  <block wx:for="{{item.cover_img}}" wx:for-item="items" wx:key="*key">
+                    <image src="{{res}}{{items}}"></image>
+                  </block>
+                </view>
+                <!-- <view class="buy-prod">
+                  <text>产品</text>{{item.subtitle}}
+                </view> -->
+              </view>
+              <view class="out-conn" catchtap="fenxiang" data-id='{{item.article_id}}'>
+               <!-- <button  open-type="share" class="connect shares share_x" data-id='{{item.id}}' data-user='{{item.user}}' catchtap="shareZhuanfa"> -->
+                <view class="connect shares" data-id='{{item.article_id}}' data-user='{{item.user}}' catchtap="shareZhuanfa">
+                  <image src="../../style/images/fenxiang_03.png" ></image>
+                  评论{{item.comment_num}}
+                </view>
+                <view class="connect likes" catchtap="{{loaunFollow==true? 'shouCangtwo' : '' }}" data-id='{{item.id}}' data-iscollected='{{item.isCollected}}'>
+                  <image wx:if="{{item.isCollected==1}}" src="../../style/images/shouchang_052.png"></image>
+                  <image wx:else  src="../../style/images/shouchang_05.png"></image>
+                  喜欢({{item.zan_num}})
+                </view>
+                <view class="eyes">
+                  <image src="../../style/images/liulan_03.png"></image>
+                  <text style='vertical-align:-2rpx;margin-left:10rpx;'>{{item.click}}</text>
+                </view>
+              </view>
+            </view>
+        </view>

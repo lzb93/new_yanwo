@@ -1,0 +1,34 @@
+/* pages/HOME/comment/mjxlist/mjxlist.wxss */
+/* @import "../../../TEAM/detail/detail.wxss"; */
+
+.mjxlist{
+
+   
+}
+.mjxlist-list{
+  width: 350rpx;
+  height: 400rpx;
+  margin:10rpx;
+  float:left;
+  font-size:28rpx;
+
+
+
+
+}
+.mjxlist-imgs{
+
+}
+.mjxlist-imgs image{
+  border-radius:8rpx;
+  width: 330rpx;
+  height: 330rpx; 
+}
+.mjxlist-name{
+  
+  float: left;
+}
+.mjxlist-zan{
+  float: right;
+
+}

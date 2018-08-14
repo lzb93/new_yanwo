@@ -1,0 +1,28 @@
+<!--pages/TYPE/sjmindex/sjmindex.wxml-->
+<view class='sjm-h1'>{{smjindex.name}}</view>
+<view class='sjm-jh'>
+  <view>每日可玩次数：{{smjindex.change_day}}  剩余：{{smjindex.play_change}}</view>
+  <view>每天分享机会：{{smjindex.share_day}}   剩余：{{smjindex.share_change}}</view>
+</view>
+
+
+<view class='sjm-jieguo' wx:if="{{jieguo!='xxx'}}">
+    <view class='sjm-true' wx:if="{{jieguo}}">
+      <view>游戏成功！步数：{{bushu}}</view>
+      <navigator class='sjm-url' url='../../USER/notused/notused'>恭喜获得优惠券：满{{yhquan.condition}}减{{yhquan.money}}</navigator>
+
+    </view>
+    <view class='sjm-falsh' wx:else>游戏失败！下次继续加油！</view>
+
+    <view class='sjm-btn' bindtap='ganbialert'>确定</view>
+</view>
+
+<button class='main_bg' bindtap='doingsjm'>进入游戏</button>
+
+<button class='' open-type="share">分享</button>
+<view class='sjm-gz'>
+    <view class='h4'>游戏规则：</view>
+    <view wx:for="{{smjindex.rule}}" wx:key>
+        <view>{{item}}</view>
+    </view>
+</view>

@@ -1,0 +1,141 @@
+/* pages/WEITAO/weitao/weitao.wxss */
+.youm-ul{
+  margin-top: 90rpx
+}
+.youm-ul .youm-li{
+  border-bottom:18rpx solid #f5f5f5;
+  background: #fff;
+
+}
+.youm-li .user-info{
+  padding:30rpx 45rpx 30rpx 25rpx;
+}
+.youm-li .user-img{
+  float:left;
+  width:140rpx;
+  position: relative;
+}
+.youm-li .user-img image{
+  height:100rpx;
+  width:100rpx;
+  border-radius: 100%;
+
+}
+.youm-li .user-img .user-img-vip{
+  width: 40rpx;
+  position: absolute;
+  top: 75rpx;
+  left: 75rpx;
+}
+.youm-li  .user-detail{
+  padding-left:140rpx;
+}
+.youm-li  .user-detail .user-nic{
+  font-size:28rpx;
+  padding:15rpx 0;
+}
+.youm-li  .user-detail .user-infos{
+  font-size:26rpx;
+  color:#8c8c8c;
+}
+.youm-li  .user-comment{
+  padding-left:25rpx;
+  padding-right:45rpx;
+  font-size:28rpx;
+  color:#313131;
+  line-height:40rpx;
+  margin-bottom:40rpx;
+  word-wrap:break-word;
+}
+.youm-li .imgs-ul{
+  margin-top:45rpx;
+  margin-bottom:20rpx;
+}
+.youm-li .imgs-ul:after{
+  content:"";
+  display:block;
+  clear:both;
+}
+.youm-li .imgs-ul image{
+  float:left;
+  width:223rpx;
+  height:223rpx;
+  margin-left:25rpx;
+  background: #f5f5f5;
+  margin-bottom:25rpx;
+
+}
+.youm-li .buy-prod{
+  /* height:40rpx; */
+  margin:0 25rpx;
+  padding-bottom:25rpx;
+  border-bottom:1rpx solid #f5f5f5;
+  font-size:26rpx;
+  color:#7cb5ce;
+  line-height:40rpx;
+  vertical-align: bottom
+}
+.youm-li .buy-prod .buy-prodtext{
+  display:inline-block;
+  height:40rpx;
+  width:100rpx;
+  line-height:40rpx;
+  margin-right: 20rpx;
+  text-align:center;
+  color:#fff;
+  background:#7db5ce;
+  font-size:24rpx;
+  vertical-align: middle;
+  /* border-radius:0 40rpx 0 40rpx; */
+  border-radius:40rpx;
+}
+.youm-li .out-conn{
+  height:85rpx;
+  line-height:85rpx;
+  text-align:right;
+  margin:0 25rpx;
+  overflow: hidden;
+}
+.youm-li .out-conn .connect{
+  margin-left:25rpx;
+  display:inline-block;
+  font-size:22rpx;
+  color:#959595;
+  
+
+}
+.youm-li .out-conn .shares image{
+  width:30rpx;
+  height:30rpx;
+  vertical-align: middle;
+}
+.youm-li .out-conn .likes image{
+  width:27rpx;
+  height:24rpx;
+  vertical-align: middle;
+}
+.youm-li .out-conn .eyes{
+  float:left;
+  height:85rpx;
+  line-height:85rpx;
+  font-size:22rpx;
+  color:#959595;
+}
+.youm-li .out-conn .eyes image{
+  width:30rpx;
+  height:23rpx;
+  vertical-align: middle;
+}
+
+.nav_wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 1rpx solid #E5E5E5;
+  background-color: #fff;
+}
+
+.nav_item {display: inline-block; font-size: 28rpx;}
+.nav_item .nav_item_s {height: 80rpx; margin: 0 25rpx; line-height: 80rpx; color: #B7B7B7;}
+.nav_item .nav_item_s.selected {border-bottom: 4rpx solid #666; color: #666;}

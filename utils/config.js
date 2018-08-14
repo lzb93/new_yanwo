@@ -1,4 +1,4 @@
 export default {
-  http: 'https://memb.meilashidai.cn',
-  host: 'https://memb.meilashidai.cn/index.php?m=api&'
+  http: 'http://whole.meilashidai.net',
+  host: 'http://whole.meilashidai.net/index.php?m=api&'
 }

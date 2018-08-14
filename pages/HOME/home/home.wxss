@@ -155,6 +155,10 @@ page {background-color: #EFEFF4; padding-top: 100rpx; }
   margin-bottom: 10rpx;
   background-color: #fff;
 }
+.product_item view{
+  position: relative;
+   
+}
 .product_item image {
   display: block;
   width: 100%;
@@ -175,4 +179,34 @@ page {background-color: #EFEFF4; padding-top: 100rpx; }
 }
 .product_item .item_text {
   font-size: 24rpx;
+}
+
+
+/* 自定义标签 */
+.custom{
+  max-width: 100rpx;
+  max-height: 100rpx;
+  
+  position: absolute;
+
+}
+.custom-tl{
+  top: 0;
+  left: 0;
+}
+.custom-tr{
+  top: 0;
+  right: 0;
+}
+.custom-c{
+  top:100rpx;
+  left:135rpx;
+}
+.custom-bl{
+  bottom: 0;
+  left: 0;
+}
+.custom-br{
+  bottom: 0;
+  right: 0;
 }
