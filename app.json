@@ -10,6 +10,12 @@
     "pages/HOME/searchResult/searchResult",
 
     "pages/MODULES/Modules/Modules",
+    "pages/MODULES/enroll/enroll",
+    "pages/MODULESNAV/hotel/hotel",
+    "pages/MODULESNAV/Modules/Modules",
+    "pages/MODULESNAV/detail/detail",
+    "pages/MODULESNAV/calendar/calendar",
+    
     
     "pages/TYPE/type/type",
     "pages/TYPE/sjm/sjm",

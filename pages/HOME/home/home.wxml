@@ -1,89 +1,10 @@
 <!-- <web-view src="https://hailixiangfung.com/wap/index.htm"></web-view> -->
-
-<view class=''>
-  <view class='search_container'>
-    <view class='search flex_between'>
-      <view class='search_left flex_row'>
-        <view class='search_icon'>
-          <image src='../../../images/icon_search.png'></image>
-        </view>
-         
-      </view>
-      <view class="icon_empt" wx:if="{{isEmpt}}" bindtap="empt">
-        <image src="../../../images/icon_empt.png"></image>
-      </view>
-      <view class='search_btn main_color' bindtap="search">搜索</view>
-    </view>
-  </view>
-
-  <swiper wx:if="{{banners.length > 0}}" class='swiper' indicator-dots="{{true}}" autoplay="{{true}}" interval="{{4000}}" 
-  circular="{{true}}">
-    <block>
-      <swiper-item wx:for="{{banners}}" wx:key wx:if="{{item.goods_id}}">
-        <navigator url='/pages/KILL/detail/detail?id={{item.goods_id}}'>
-          <image src="{{http + item.img}}"></image>
-        </navigator>
-      </swiper-item>
-      <swiper-item wx:for="{{banners}}" wx:key wx:if="{{!item.goods_id}}">
-        <view>
-          <image src="{{http + item.img}}"></image>
-        </view>
-      </swiper-item>
-    </block>
-  </swiper>
-
-  <view class='layout'>
-    <view class='layout_inner flex_between' style='padding: 20rpx 50rpx; background: #fff;'>
-      <view class='nav_item' wx:for="{{navTabs}}" wx:key bindtap='tabList' data-index="{{index}}">
-        <image src='{{item.src}}' mode='aspectFit'></image>
-        <view class='item_text'>{{item.name}}</view>
-      </view>
-    </view>
-  </view>
-
-  <view class='layout' wx:if="{{first.length > 0}}">
-    <view class='layout_header'>
-      <view class='layout_title'>热门商品</view>
-    </view>
-    <scroll-view scroll-x class='layout_inner' style='white-space: nowrap; background: #fff; padding: 30rpx 0 0;'>
-      <navigator class='activity_item' wx:for="{{first}}" wx:key url='/pages/KILL/detail/detail?id={{item.goods_id}}'>
-        <image class='img' src='{{host}}&c=Goods&a=goodsThumImages&width=700&height=340&goods_id={{item.goods_id}}' 
-        mode='aspectFit'></image>
-        <view class='item_content'>
-          <view class='text tx_ov'>{{item.goods_name}}</view>
-          <text class='color_red'>￥{{item.shop_price}}</text>
-        </view>
-      </navigator>
-    </scroll-view>
-  </view>
-
-  <view class='layout' wx:if="{{third.length > 0}}">
-    <view class='layout_header'>
-      <view class='layout_title'>商品推荐</view>
-    </view>
-    <view class='layout_inner flex_between'>
-      <navigator class='product_item' wx:for="{{third}}" wx:key url='/pages/KILL/detail/detail?id={{item.goods_id}}'>
-        <view>
-          <image src='{{host}}&c=Goods&a=goodsThumImages&width=740&height=740&goods_id={{item.goods_id}}' mode='aspectFit'></image>
-
-          <!-- 标签 -->
-          <image src='{{http+item.label_img}}' wx:if="{{item.label_position==0}}" class='custom custom-tl' mode='aspectFit'></image> 
-          <image src='{{http+item.label_img}}' wx:if="{{item.label_position==1}}" class='custom custom-tr' mode='aspectFit'></image> 
-          <image src='{{http+item.label_img}}' wx:if="{{item.label_position==2}}" class='custom custom-bl' mode='aspectFit'></image> 
-          <image src='{{http+item.label_img}}' wx:if="{{item.label_position==3}}" class='custom custom-br' mode='aspectFit'></image> 
-            <!-- <image src='../../../images/xin2.png' class='custom custom-l' mode='aspectFit'></image>  -->
-        </view>
-        <view class='product_content'>
-          <view class='item_text tx_ov'>{{item.goods_name}}</view>
-          <view class='item_money color_red' style='margin-top: 6rpx;'>会员价：￥{{item.member_price}}</view>
-          <view class='flex_between align_items' style='margin-top: 6rpx;'>
-            <view class='item_money color_gray' style='font-size: 20rpx;'>￥{{item.shop_price}}</view>
-            <view style='font-size: 22rpx;' class='color_gray'>销量 {{item.sales_sum}} 笔</view>
-          </view>
-          
-        </view>
-      </navigator>
-    </view>
-  </view>
-
+<import src="../../MODULES/Modules/Modules.wxml" />
+<view class='' wx:for="{{sort}}">
+    <template wx:if="{{item=='search'}}" is="search" data="{{isEmpt,http,host}}" />
+    <template wx:if="{{item=='banner'}}" is="banner" data="{{banners,http,host}}" /> 
+    <template wx:if="{{item=='nav'}}" is="nav" data="{{navTabs,http,host}}" />
+    <template wx:if="{{item=='new'}}" is="new" data="{{first,http,host}}" /> 
+    <template wx:if="{{item=='hot'}}" is="hot" data="{{first,http,host}}" />
+    <template wx:if="{{item=='recommend'}}" is="recommend" data="{{third,http,host}}" />
 </view>

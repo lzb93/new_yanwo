@@ -1,4 +1,9 @@
 <!--pages/MODULES/Modules/Modules.wxml-->
+<template name="searchs">
+  <view class='search_container'>
+   12312312312312312312123
+  </view>
+</template>
 <template name="search">
   <view class='search_container'>
     <view class='search flex_between'>

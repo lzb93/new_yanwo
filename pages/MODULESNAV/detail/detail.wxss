@@ -1,0 +1,2 @@
+/* pages/MODULESNAV/detail/detail.wxss */
+@import '../../TEAM/detail/detail.wxss';

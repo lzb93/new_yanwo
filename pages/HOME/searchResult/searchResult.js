@@ -1,6 +1,6 @@
 import { search } from '../../../services/API';
 import { dalay } from '../../../utils/utils'
-
+ 
 const app = getApp();
 Page({
   data: {

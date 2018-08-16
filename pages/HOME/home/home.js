@@ -1,7 +1,8 @@
 import { homePage } from '../../../services/API'
 import { dalay } from '../../../utils/utils'
 
-const app = getApp()
+const app = getApp();
+
 Page({
   data: {
     http: app.http,
@@ -27,12 +28,14 @@ Page({
         // name: '限时折扣'
       },
       {
+        url: '/pages/MODULES/enroll/enroll',
         src: '../../../images/icon_home_tuangou.png',
         name: '团购专区'
       },
       {
+        url: '/pages/MODULESNAV/hotel/hotel',
         src: '../../../images/icon_home_cuxiao.png',
-        name: '优惠促销'
+        name: '预定'
       }
     ]
   },
@@ -50,7 +53,8 @@ Page({
         this.setData({
           banners: result.banner,
           first: result.first,
-          third: result.third
+          third: result.third,
+          sort: result.sort
         })
       } else {
         app.wxAPI.alert(msg);
