@@ -1,4 +1,4 @@
-import { teamList } from '../../../services/API';
+import { teamList, reservegetlist } from '../../../services/API';
 import { dalay } from '../../../utils/utils'
 
 const app = getApp();
@@ -22,14 +22,33 @@ Page({
     isAgain: true,
     isNomore: false,
   },
+  reservegetlist(params) {
+    reservegetlist({ page: this.data.page }).then(({ status, result, msg }) => {
+      if (status == 1) {
+        const products = result.data || [];
+        const arr = this.data.products.concat(products);
+        this.setData({
+          products: arr,
+          page: ++this.data.page,
+          isAgain: true
+        })
+        this.finish(products);
+      } else {
+        app.wxAPI.alert(msg)
+      }
+    })
+  },
   onLoad() {
-    this.getTeamList({ page: this.data.page });
+    // this.getTeamList({ page: this.data.page });
+    this.reservegetlist({ page: this.data.page });
+
   },
   onReachBottom() {
     if (!dalay(1000)) return;
     if (!this.data.isAgain) return;
     this.setData({ isAgain: false });
     this.getTeamList({ page: this.data.page });
+    this.reservegetlist({ page: this.data.page });
   },
   getTeamList(params) {
     teamList({ p: this.data.page }).then(({ status, result, msg }) => {
@@ -57,9 +76,6 @@ Page({
     }
   },
   onShareAppMessage(res) {
-    return {
-      title: '拼团',
-      path: '/pages/TEAM/team/team?userId=' + app.userInfo.user_id,
-    }
+
   }
 })

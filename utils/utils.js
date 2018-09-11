@@ -73,6 +73,37 @@ export function js_date_time(unixtime) {
   return timeSpanStr;
 }  
 
+//时间戳转成日期
+export function js_date_time_ri(unixtime) {
+  var dateTime = new Date(parseInt(unixtime) * 1000)
+  var year = dateTime.getFullYear();
+  var month = dateTime.getMonth() + 1;
+  var day = dateTime.getDate();
+  var hour = dateTime.getHours();
+  var minute = dateTime.getMinutes();
+  var second = dateTime.getSeconds();
+  var now = new Date();
+  var now_new = Date.parse(now.toDateString());  //typescript转换写法  
+  var milliseconds = now_new - dateTime;
+  if (month < 10) {
+    month = '0' + month
+  }
+  if (day < 10) {
+    day = '0' + day
+  }
+  if (hour < 10) {
+    hour = '0' + hour
+  }
+  if (minute < 10) {
+    minute = '0' + minute
+  }
+  if (second < 10) {
+    second = '0' + second
+  }
+  var timeSpanStr = year + '-' + month + '-' + day ;
+  return timeSpanStr;
+}  
+
 // 时间戳差 转为 剩余时间
 
 export function remainTime(micro_second) {

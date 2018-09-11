@@ -1,2 +1,2 @@
 <!--pages/TYPE/sjm/sjm.wxml-->
-<web-view src="http://www.lzb93.com/sjmy/release/html5/1438899331/" bindmessage="bindGetMsg"></web-view>
+<web-view src="https://m.weike.fm/channel/276200" bindmessage="bindGetMsg"></web-view>

@@ -7,7 +7,7 @@
 
   <view class='product_wrap'>
     <navigator class='product_item' wx:for="{{products}}" wx:key 
-    url='/pages/MODULESNAV/detail/detail?id={{item.goods_id}}&team_id={{item.team_id}}'>
+    url='/pages/MODULESNAV/detail/detail?id={{item.goods_id}}&reserve_id={{item.reserve_id}}'>
       <view>
         <image src="{{host}}c=Goods&a=goodsThumImages&width=400&height=240&goods_id={{item.goods_id}}"></image>
       </view>
@@ -17,10 +17,10 @@
           <view>
             <view class='flex_row align_items'>
               <view class='product_m_i'>￥</view>
-              <view class='product_m'>{{item.team_price}}</view>
-              <view>单买 ￥{{item.goods.shop_price}}</view>
+              <view class='product_m'>{{item.discount}}</view>
+              <view>原价 ￥{{item.goods.shop_price}}</view>
             </view>
-            <view class='color_gray1' style='margin-top: 10rpx; font-size: 24rpx;'>{{item.needer}}人成团</view>
+            <view class='color_gray1' style='margin-top: 10rpx; font-size: 24rpx;'>{{item.goods.goods_name}}</view>
           </view>
           <view class='product_btn main_bg' style='margin-top: 8rpx;'>
             <view>预定</view>

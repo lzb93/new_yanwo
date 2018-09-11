@@ -8,6 +8,7 @@ Page({
     type: ''
   },
   onLoad(options) {
+    console.log(options)
     const type = options.type;
     const orderSn = options.orderSn;
     if (type) {

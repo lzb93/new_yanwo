@@ -1,2 +1,54 @@
 /* pages/MODULESNAV/detail/detail.wxss */
 @import '../../TEAM/detail/detail.wxss';
+
+.item-date{
+  background: #fff;
+  padding: 20rpx;
+  margin-top: 20rpx;
+
+}
+
+.item {
+  background-color: #fff;
+  padding: 0 25px;
+  height: 120rpx;
+  line-height: 120rpx;
+  position: relative;
+  border-top: 1px solid #f1f1f1;
+}
+
+.item-img {
+  position: absolute;
+  top: 50%;
+  margin-top: -25px;
+  right: 50rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+
+.item-left {
+  position: absolute;
+  top: 50%;
+  margin-top: -10px;
+  right: 10rpx;
+  width: 20px;
+  height: 20px;
+}
+.item-right{
+   min-width: 300rpx;
+   float:right;
+   display: inline-block;
+   margin-right:30rpx;
+   text-align: right;
+   line-height: 120rpx;
+   height: 120rpx;
+   overflow: hidden;
+   right: 40rpx;
+   position: absolute; 
+}
+.item-right picker{
+   min-width: 300rpx;
+   height: 116rpx;
+   overflow: hidden;
+}

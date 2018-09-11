@@ -343,3 +343,17 @@ export function enclosegetPrize(params) {
 export function encloseshare(params) {
   return get(config.host + 'c=enclose&a=share', params)
 }
+
+// 酒店预定- m=api&c=reserve&a=getlist
+export function reservegetlist(params) {
+  return get(config.host + 'c=reserve&a=getlist', params)
+}
+// 详情   c=reserve&a=getInfo&reserve_id=5
+export function reservegetInfo(params) {
+  return get(config.host + 'c=reserve&a=getInfo', params)
+}
+
+// 下单   c=reserve&a=getInfo&reserve_id=5
+export function reserveAddOrder(params) {
+  return get(config.host + 'c=reserve&a=addOrder', params)
+}
